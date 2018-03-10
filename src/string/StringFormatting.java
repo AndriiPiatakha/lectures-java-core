@@ -5,8 +5,16 @@ import java.util.Formatter;
 import java.util.Locale;
 
 public class StringFormatting {
+	
+	public static final String INVALID_UOM_ERROR_MESSAGE = 
+			"uom %d is invalid for product %s";
 
 	public static void main(String[] args) {
+		
+		String format = String.format(INVALID_UOM_ERROR_MESSAGE, 5, "Boots Size 7", 10, 90);
+		System.out.println(format);
+		
+//		System.out.printf(INVALID_UOM_ERROR_MESSAGE, "Boots Size 7");
 
 		Formatter fr = new Formatter();
 		fr.format("%.4f", Math.PI);
