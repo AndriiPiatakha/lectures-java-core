@@ -1,0 +1,14 @@
+git config --global user.name "Jerry Mouse"
+git config --global user.email "jerry@tutorialspoint.com"
+
+git config --local user.name "Jerry Mouse"
+git config --local user.email "jerry@tutorialspoint.com"
+
+
+git config --global branch.autosetuprebase always
+
+git config --global core.editor "notepad"
+git config --global core.editor vim
+git config --global core.editor "vim"
+
+git config --list
