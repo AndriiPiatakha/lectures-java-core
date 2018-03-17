@@ -3,6 +3,8 @@ package oop.cloning;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.commons.lang.SerializationUtils;
+
 public class CloningTest {
 
 	public static void main(String[] args) throws CloneNotSupportedException {
@@ -28,11 +30,15 @@ public class CloningTest {
 		// change emp props
 		emp.getProps().put("title", "CEO");
 		emp.getProps().put("city", "New York");
+		
+		
 		System.out.println("clonedEmp props:" + clonedEmp.getProps());
 
 		// change emp name
 		emp.setName("new");
 		System.out.println("clonedEmp name:" + clonedEmp.getName());
+		
+		SerializationUtils.clone(emp);
 		
 	}
 

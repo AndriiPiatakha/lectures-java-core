@@ -1,10 +1,11 @@
 package oop.cloning;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-public class Employee implements Cloneable {
+public class Employee implements Cloneable, Serializable {
 
 	private int id;
 
@@ -55,26 +56,26 @@ public class Employee implements Cloneable {
 
 	// DEEP CLONING
 
-//	public Object clone() throws CloneNotSupportedException {
-//
-//		Object obj = super.clone(); // utilize clone Object method
-//
-//		Employee emp = (Employee) obj;
-//
-//		// deep cloning for immutable fields
-//		emp.setProps(null);
-//		Map<String, String> hm = new HashMap<>();
-//		String key;
-//		Iterator<String> it = this.props.keySet().iterator();
-//		// Deep Copy of field by field
-//		while (it.hasNext()) {
-//			key = it.next();
-//			hm.put(key, this.props.get(key));
-//		}
-//		emp.setProps(hm);
-//
-//		return emp;
-//	}
+	// public Object clone() throws CloneNotSupportedException {
+	//
+	// Object obj = super.clone(); // utilize clone Object method
+	//
+	// Employee emp = (Employee) obj;
+	//
+	// // deep cloning for immutable fields
+	// emp.setProps(null);
+	// Map<String, String> hm = new HashMap<>();
+	// String key;
+	// Iterator<String> it = this.props.keySet().iterator();
+	// // Deep Copy of field by field
+	// while (it.hasNext()) {
+	// key = it.next();
+	// hm.put(key, this.props.get(key));
+	// }
+	// emp.setProps(hm);
+	//
+	// return emp;
+	// }
 
 	// - clonning with serialization
 	// - clonning with constructor
