@@ -14,28 +14,29 @@ public class SerialDemo {
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
 		A a = new A(1, "some text");
-		B b = new B();
+//		B b = new B();
 		System.out.println("Object to write = " + a);
 		try (ObjectOutputStream ous = new ObjectOutputStream(
 				new FileOutputStream("serialFile"))) {
 			ous.writeObject(a);
-			ous.writeObject(b);
 		}
 		A readObject;
-		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("serialFile"))) {
+		try (ObjectInputStream ois = new ObjectInputStream(
+				new FileInputStream("serialFile"))) {
 			readObject = (A)ois.readObject();
 		}
-		System.out.println(readObject);
+		System.out.println("Read object = " + readObject);
 		
 		System.out.println(readObject == a);
+		System.out.println(readObject.getB() == a.getB());
 		
-		ArrayList<B> bList = new ArrayList<>();
-		ArrayList<A> aList = new ArrayList<>(bList);
-		if (b instanceof A) {
-			
-		}
+//		ArrayList<B> bList = new ArrayList<>();
+//		ArrayList<A> aList = new ArrayList<>(bList);
+//		if (b instanceof A) {
+//			
+//		}
 		
-		b.getClass().isInstance(a);
+//		b.getClass().isInstance(a);
 		
 	}
 	
@@ -57,6 +58,10 @@ class A implements Serializable {
 		
 	}
 	
+	public B getB() {
+		return this.b;
+	}
+	
 	public A(int i, String str) {
 		this.i = i;
 		this.str = str;
@@ -72,7 +77,7 @@ class A implements Serializable {
 	
 }
 
-class B extends A implements Serializable {
+class B implements Serializable {
 	private String bString;
 	private int bInt;
 	

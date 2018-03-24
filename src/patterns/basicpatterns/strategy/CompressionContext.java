@@ -17,7 +17,15 @@ public class CompressionContext {
 	// use the strategy
 
 	public void createArchive(List<File> files) {
+		// do smth
 		strategy.compressFiles(files);
+		// do smth
+	}
+	
+	public void createArchive(List<File> files, CompressionStrategy cs) {
+		// do smth
+		strategy.compressFiles(files);
+		// do smth
 	}
 
 }

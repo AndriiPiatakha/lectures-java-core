@@ -1,7 +1,9 @@
 package io;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.OpenOption;
 import java.nio.file.Path;
@@ -10,6 +12,7 @@ import java.nio.file.StandardOpenOption;
 import java.nio.file.attribute.FileAttribute;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -24,6 +27,31 @@ public class NioDemo {
 		hm2();
 
 		writeToFile();
+		
+		
+		Path p = Paths.get("test", "test");
+		Stream<Path> list = Files.list(p);
+		Files.walk(p).filter(file -> true);
+		Files.find(p, 1, (path2, attr) -> true);
+		Files.lines(p);
+		Files.readAllLines(p);
+		
+		//try with resources
+		Files.createDirectory(p);
+		try (Stream<String> str = Files.lines(p);
+				Scanner sc = new Scanner(System.in);) {
+			
+		} finally {
+//			str.close();
+//			sc.close();
+		}
+		
+		InputStream is = null;
+		try {
+			is = new FileInputStream(new File(""));
+		} finally {
+			is.close();
+		}
 	}
 
 	private static void hm() throws IOException {
