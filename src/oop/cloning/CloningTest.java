@@ -3,7 +3,7 @@ package oop.cloning;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.commons.lang.SerializationUtils;
+//import org.apache.commons.lang.SerializationUtils;
 
 public class CloningTest {
 
@@ -38,7 +38,7 @@ public class CloningTest {
 		emp.setName("new");
 		System.out.println("clonedEmp name:" + clonedEmp.getName());
 		
-		SerializationUtils.clone(emp);
+//		SerializationUtils.clone(emp);
 		
 	}
 
