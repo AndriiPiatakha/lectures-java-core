@@ -13,6 +13,7 @@ public class Lock2 {
 
         executor.submit(() -> {
             lock.lock();
+//            lock.tryLock()
             try {
                 ConcurrentUtils.sleep(1);
             } finally {

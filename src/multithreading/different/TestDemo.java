@@ -19,7 +19,6 @@ public class TestDemo {
 		    .forEach(i -> executor.submit(TestDemo::increment));
 
 		stop(executor);
-
 		System.out.println(count);
 	}
 	
