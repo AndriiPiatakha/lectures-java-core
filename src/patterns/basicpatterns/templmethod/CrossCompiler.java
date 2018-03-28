@@ -4,11 +4,17 @@ public abstract class CrossCompiler {
 
 	  public final void crossCompile() {
 	    collectSource();
+	    doSmthImportant();
 	    // could be some general methods
 	    compileToTarget();
 	  }
 
-	  protected abstract void collectSource();
+	  private void doSmthImportant() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	protected abstract void collectSource();
 
 	  protected abstract void compileToTarget();
 
