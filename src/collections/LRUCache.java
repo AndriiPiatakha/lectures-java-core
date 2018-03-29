@@ -4,6 +4,7 @@ import java.util.ArrayDeque;
 import java.util.HashMap;
 import java.util.Map;
 
+// LinkedHashMap removeEldestEntry
 public class LRUCache {
 
 	private final int INITIAL_CAPACITY;
