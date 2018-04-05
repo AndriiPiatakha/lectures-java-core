@@ -32,6 +32,8 @@ public class DemoTest {
 	public static void main(String[] args) throws ParseException {
 //		calendarExample(); 
 		
+		testConvertionInstant();
+		
 //		calendarEx1();
 		 
 //		 parseEx();
@@ -50,7 +52,8 @@ public class DemoTest {
 	public static void calendarEx1() throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Date dateParsed = sdf.parse("1999/01/10 10:02:02");
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+		System.out.println(dateParsed);
+		Date from = Date.from(Instant.now());
 
 		String date = sdf.format(new Date());
 		System.out.println(date);
@@ -60,7 +63,7 @@ public class DemoTest {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
 		String dateInString = "31-08-1982 10:20:56";
 		Date date = sdf.parse(dateInString);
-		System.out.println(date);
+		System.out.println(sdf.format(date));
 	}
 
 	public static void convertDateCalender() throws ParseException {
@@ -110,12 +113,15 @@ public class DemoTest {
 	public static void localDateTimeEx() {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 		LocalDateTime now = LocalDateTime.now();
+
 		System.out.println(dtf.format(now)); // 2016/11/16 12:08:43
 	}
 
 	public static void durationAndClock() {
 		Clock c = Clock.systemUTC();
 		Duration d = Duration.ofHours(5);
+		Duration.of(1, ChronoUnit.DAYS);
+		Duration.of(1, ChronoUnit.CENTURIES);
 		Clock clock = Clock.offset(c, d);
 		System.out.println(clock.instant());
 
@@ -125,6 +131,10 @@ public class DemoTest {
 		Instant i = Instant.now();
 		// ZoneId.systemDefault();
 		ZonedDateTime atZone = i.atZone(ZoneId.of("Europe/Moscow"));
+		Set<String> availableZoneIds = ZoneId.getAvailableZoneIds();
+		for (String string : availableZoneIds) {
+			System.out.println(string);
+		}
 		System.out.println(i.isSupported(ChronoUnit.CENTURIES));
 		LocalDateTime ldt = LocalDateTime.ofInstant(i, ZoneOffset.UTC);
 		System.out.println(atZone);
@@ -164,6 +174,7 @@ public class DemoTest {
 		System.out.println(oneHours.getSeconds() + " seconds");
 
 		Duration oneHours2 = Duration.of(1, ChronoUnit.HOURS);
+		oneHours.getSeconds();
 		System.out.println(oneHours2.getSeconds() + " seconds");
 
 		// Test Duration.between
