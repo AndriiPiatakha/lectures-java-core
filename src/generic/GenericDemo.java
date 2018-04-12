@@ -17,11 +17,14 @@ public class GenericDemo {
 //		List<String> listString = list2;
 //		listString.add("asd");
 	
-		List<Child> list = new ArrayList<>();
+		List<Child2> list = new ArrayList<>();
 		
 		
 		// can call only if generic
-//		someMethod(list);
+		someMethod(list);
+		for (Child2 child2 : list) {
+			
+		}
 		String[] arr =  {"as", "s"};
 		String[] array = Arrays.stream(arr).filter((str) -> str.length() < 1).toArray(String[]::new);
 	
@@ -29,18 +32,22 @@ public class GenericDemo {
 	
 	
 	// It could be List<Child> here so I can't add Parent to it
-//	public static void someMethod(List<? extends Parent> list) {
-//		list.add(new Child());
-//	}
+	public static void someMethod(List<? extends Parent> list) {
+		Parent parent = list.get(0);
+		// call specific parent method;
 	
-//	public static void someMethod2(List<? super Child> list) {
 //		list.add(new Object());
-//		list.add(new Child());
-//		list.add(new Child2());
+		list.add(null);
+	}
+	
+	public static void someMethod2(List<? super Child> list) {
+//		list.add(new Object());
+		list.add(new Child());
+		list.add(new Child2());
 //		list.add(new Parent());
-//		
-//		Object child = list.get(1);
-//	}
+		
+		Object child = list.get(1);
+	}
 
 }
 
@@ -68,6 +75,10 @@ class Parent  {
 }
 
 class Child extends Parent {
+	
+}
+
+class ChildChild extends Child {
 	
 }
 

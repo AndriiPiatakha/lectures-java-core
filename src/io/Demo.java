@@ -27,17 +27,18 @@ public class Demo {
 //		readBufferedInput();
 //		writeOutputStream("asdasdasd" + System.lineSeparator() + "asdasd \nasda");
 		
-//		writeBufferedWriter("asdasdasd" + System.lineSeparator() + "Ù˚‚Ù˚‚ÙÙ˚‚˚ \nasda");
+//		writeBufferedWriter("asdasdasd" + System.lineSeparator() + "—Ñ—ã–≤—Ñ—ã–≤—Ñ—ã–≤ \nasda");
 		
 //		readBufferedReader();
 		
 //		readFile();
 		
-		writeNio("\nasda ÙÙ‚Ù˚‚Ù˚‚");
+		writeNio("\nasda —Ñ—ã—Ñ—ã–≤—Ñ–≤");
 	}
 	
 	private static void writeNio(String textToWrite) throws IOException {
 		Files.write(Paths.get("test4.txt"), textToWrite.getBytes(), CREATE, APPEND);
+		
 	}
 	
 	private static void readFile() throws IOException {
@@ -47,7 +48,7 @@ public class Demo {
 		}
 	}
 	
-	private static void readBufferedReader() throws FileNotFoundException, IOException {
+	private static String readBufferedReader() throws FileNotFoundException, IOException {
 		StringBuilder sb = new StringBuilder();
 		try (BufferedReader br = new BufferedReader(new FileReader("test3.txt"))) {
 			String buffer;
@@ -56,6 +57,7 @@ public class Demo {
 			}
 		}
 		System.out.println(sb.toString());
+		return sb.toString();
 	}
 	
 	private static void writeBufferedWriter(String textToWrite) 

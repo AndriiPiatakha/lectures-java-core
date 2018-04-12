@@ -61,6 +61,8 @@ public class FileDemo {
 		
 		String[] array = new String[] { "a", "b", "c" };
 		String joined2 = String.join(",", array);
+		
+//		Files.readAllBytes("");
 
 	}
 	

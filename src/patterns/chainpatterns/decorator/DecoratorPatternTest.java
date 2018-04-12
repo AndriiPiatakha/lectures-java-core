@@ -7,7 +7,7 @@ public class DecoratorPatternTest {
 		sportsCar.assemble();
 		System.out.println("\n*****");
 
-		final Car sportsLuxuryCar = new SportsCar(new SportsCar(new BasicCar()));
+		final Car sportsLuxuryCar = new SportsCar(new LuxuryCar(new BasicCar()));
 		sportsLuxuryCar.assemble();
 		System.out.println("\n*****");
 		

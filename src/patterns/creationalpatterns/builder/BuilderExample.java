@@ -2,7 +2,7 @@ package patterns.creationalpatterns.builder;
 
 public class BuilderExample {
 	public static void main(final String[] args) {
-		final Director director = new Director();
+		final ComputerDirector director = new ComputerDirector();
 		final ComputerBuilder cheapComputerBuilder = new CheapComputerBuilder();
 
 		director.setComputerBuilder(cheapComputerBuilder);

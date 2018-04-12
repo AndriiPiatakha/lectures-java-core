@@ -17,7 +17,15 @@ public class Client {
 		// get a list of files...
 		List<File> fileList = new ArrayList<>();
 		ctx.createArchive(fileList);
+		
+		ctx.createArchive(fileList, Client::doSmth);
+		
+		ctx.createArchive(fileList, (files) -> {});
 
+	}
+	
+	public static void doSmth(List<File> files) {
+		
 	}
 
 }

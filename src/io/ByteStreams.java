@@ -4,41 +4,45 @@ import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.DataInputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.stream.Stream;
 
 public class ByteStreams {
 	
 	public static void main(String[] args) throws IOException {
-		String filePath = "test";
-		printFileWithFileInputStream(filePath);
+		String filePath = "demoIo.txt";
+//		printFileWithFileInputStream(filePath);
 		
-		System.out.println();
-		System.out.println("===========");
+//		System.out.println();
+//		System.out.println("===========");
+//		
+//		printFileWithFileInputStreamWithBuffer(filePath);
+//		
+//		System.out.println();
+//		System.out.println("===========");
+//		
+//		printFileWithFileReader(filePath);
+//		
+//		System.out.println();
+//		System.out.println("===========");
+//		
+//		printFileWithBuffer(filePath);
+//		
+//		writeFileToPath("testWrite.txt", "some text to write \nand more text русские буквы");
+//		writeFileToPathFileWriter("testWrite2.txt", "some text to write \nand more text");
+//		noWriteWithoutFlush("testWrite3.txt", "some text to write \nand more text");
 		
-		printFileWithFileInputStreamWithBuffer(filePath);
-		
-		System.out.println();
-		System.out.println("===========");
-		
-		printFileWithFileReader(filePath);
-		
-		System.out.println();
-		System.out.println("===========");
-		
-		printFileWithBuffer(filePath);
-		
-		writeFileToPath("testWrite.txt", "some text to write \nand more text");
-		writeFileToPathFileWriter("testWrite2.txt", "some text to write \nand more text");
-		noWriteWithoutFlush("testWrite3.txt", "some text to write \nand more text");
-		
+		printFileToConsole(filePath);
 		
 	}
 
@@ -54,8 +58,11 @@ public class ByteStreams {
 	private static void printFileWithFileInputStreamWithBuffer(String path) throws IOException, FileNotFoundException {
 		try (FileInputStream fis = new FileInputStream(path);
 				BufferedInputStream bis = new BufferedInputStream(fis);
-				DataInputStream dis = new DataInputStream(bis)) {
+				DataInputStream dis = new DataInputStream(bis);
+//				DataInputStream dis2 = new DataInputStream(new BufferedInputStream(new FileInputStream(path)))	
+				) {
 			int i;
+			
 			while (dis.available() != 0) {
 				System.out.print(dis.readLine());
 				System.out.println();
@@ -100,9 +107,11 @@ public class ByteStreams {
 	}
 	
 	public static void printFileToConsole(String path) throws IOException {
-		try (Stream<String> fStream = Files.lines(Paths.get(path))) {
+		try (Stream<String> fStream = Files.lines(Paths.get(path), StandardCharsets.UTF_8)) {
 			fStream.forEach(System.out::println);
 		}
+		
+//		List<String> readAllLines = Files.readAllLines(Paths.get(path));
 	}
 	
 	

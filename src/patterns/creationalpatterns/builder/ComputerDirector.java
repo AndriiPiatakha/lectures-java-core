@@ -1,6 +1,6 @@
 package patterns.creationalpatterns.builder;
 
-public class Director {
+public class ComputerDirector {
 	private ComputerBuilder computerBuilder;
 
 	public void setComputerBuilder(final ComputerBuilder computerBuilder) {

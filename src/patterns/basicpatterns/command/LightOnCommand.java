@@ -16,6 +16,7 @@ public class LightOnCommand implements Command {
 
 	public void execute() {
 		light.switchOn();
+		System.out.println("Light is on");
 	}
 
 }
