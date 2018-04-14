@@ -138,9 +138,9 @@ public class SearchEngine {
 		}
 		es.shutdown();
 		//TODO avoid while loop!!! find out how to change this
-		while (!es.isTerminated()) {
-			;
-		}
+//		while (!es.isTerminated()) {
+//			;
+//		}
 	}
 	
 	/**
