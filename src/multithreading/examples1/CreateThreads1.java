@@ -1,12 +1,13 @@
 package multithreading.examples1;
 
+import java.sql.Time;
 import java.util.concurrent.TimeUnit;
 
-public class Threads1 {
+public class CreateThreads1 {
 
     public static void main(String[] args) {
-        test1();
-//        test2();
+//        test1();
+        test2();
 //        test3();
     }
 
@@ -15,6 +16,7 @@ public class Threads1 {
             try {
                 System.out.println("Foo " + Thread.currentThread().getName());
                 TimeUnit.SECONDS.sleep(1);
+//                TimeUnit.MILLISECONDS.sleep(1000);
                 System.out.println("Bar " + Thread.currentThread().getName());
             }
             catch (InterruptedException e) {
@@ -37,9 +39,11 @@ public class Threads1 {
                 e.printStackTrace();
             }
         };
+        
 
         Thread thread = new Thread(runnable);
         thread.start();
+        System.out.println("Main thread");
     }
 
     private static void test1() {
@@ -47,12 +51,40 @@ public class Threads1 {
             String threadName = Thread.currentThread().getName();
             System.out.println("Hello " + threadName);
         };
+        
+        RunnableImpl ri = new RunnableImpl();
 
         runnable.run();
 
         Thread thread = new Thread(runnable);
+        thread.setName("Custom thread name");
         thread.start();
 
         System.out.println("Done!");
+        
+        // --------------
+        
+//        CustomThreadImpl cti = new CustomThreadImpl();
+//        cti.start();
     }
+}
+
+class RunnableImpl implements Runnable {
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}
+
+class CustomThreadImpl extends Thread {
+
+	@Override
+	public void run() {
+		System.out.println(Thread.currentThread().getName());
+		
+	}
+	
 }

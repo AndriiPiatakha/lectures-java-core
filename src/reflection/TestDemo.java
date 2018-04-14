@@ -2,14 +2,22 @@ package reflection;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.lang.reflect.TypeVariable;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.TreeSet;
 import java.util.function.Function;
 
-public class TestDemo implements I, A{
+import javafx.scene.Parent;
+
+public class TestDemo extends Parent implements I, A{
 	
 	private int a;
 	private int b;
@@ -19,7 +27,7 @@ public class TestDemo implements I, A{
 		return pathname.isDirectory();
 	}
 	
-	public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException, NoSuchMethodException, InvocationTargetException {
+	public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException, NoSuchMethodException, InvocationTargetException, ClassNotFoundException {
 		Class c = TestDemo.class;
 		
 
@@ -32,10 +40,11 @@ public class TestDemo implements I, A{
 //		System.out.println(c.getSuperclass().getName());
 		
 		Class[] interfaces = c.getInterfaces();
-//		Arrays.stream(interfaces).forEach(System.out::println);
+		Arrays.stream(interfaces).forEach(System.out::println);
 		
 		Field[] fields = c.getFields();
 //		Arrays.stream(fields).forEach(System.out::println);
+		Class interClass = A.class;
 		
 		Field[] declaredFields = c.getDeclaredFields();
 //		Arrays.stream(declaredFields).forEach(System.out::println);
@@ -62,14 +71,37 @@ public class TestDemo implements I, A{
 
 		stringList.add("Hello world");
 
-		System.out.println("Integer value = " + integerList.get(0));
+//		System.out.println("Integer value = " + integerList.get(0));
 		
 		D<ChildChildA> d = new D<>(new ChildChildA());
-		System.out.println(d.getT());
+//		System.out.println(d.getT());
 		
 		test2(d);
 		
 		method3(new ChildA());
+		TreeSet<String> ts = new TreeSet<>();
+		
+		Class c10 = new Comparator<String>() {
+
+			@Override
+			public int compare(String o1, String o2) {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+		}.getClass();
+		
+		System.out.println(c10.isAnonymousClass());
+		
+		Class.forName("some.jdbc.driver.Class");
+		
+		c.getConstructor(String.class, Integer.class);
+		Constructor[] constructors = c.getConstructors();
+		for (Constructor constructor : constructors) {
+			TypeVariable[] typeParameters = constructor.getTypeParameters();
+			for (TypeVariable typeVariable : typeParameters) {
+				String name = typeVariable.getName();
+			}
+		}
 	}
 	
 	public void setStr(String str) {
@@ -77,7 +109,7 @@ public class TestDemo implements I, A{
 	}
 
 	private void testMethod(String str) {
-		System.out.println(str);
+//		System.out.println(str);
 	}
 	
 	public static <T extends A> void method3(T t) {

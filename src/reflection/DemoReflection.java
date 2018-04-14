@@ -18,7 +18,7 @@ public final class DemoReflection implements A3 {
 	public static void main(String[] args) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, ClassNotFoundException, NoSuchFieldException {
 		DemoReflection dr = new DemoReflection();
 		Class clazz = DemoReflection.class;
-//		Class clazz2 = dr.getClass();
+		Class clazz2 = dr.getClass();
 		
 //		int modifiers = clazz.getModifiers();
 //		System.out.println(modifiers);
@@ -29,10 +29,11 @@ public final class DemoReflection implements A3 {
 //			System.out.println("Final");
 //		}
 		
-//		Field[] fields = clazz.getDeclaredFields();
+		Field[] fields = clazz.getDeclaredFields();
 //		for (Field field : fields) {
+//			field.setAccessible(true);
 //			System.out.println(field);
-//			System.out.println(field.getName());
+////			System.out.println(field.getName());
 //		}
 		
 //		Arrays.stream(fields).forEach(System.out::println);
@@ -44,9 +45,15 @@ public final class DemoReflection implements A3 {
 		
 //		Class.forName("com.jdbc.driver.DriverManager");
 		
-		Method testMethod = classMain.getDeclaredMethod("testMethod", String.class);
-		testMethod.setAccessible(true);
+//		Method testMethod = classMain.getDeclaredMethod("testMethod", String.class);
+//		testMethod.setAccessible(true);
 //		testMethod.invoke(main, "some string");	
+		
+		Method testMethod = classMain.getDeclaredMethod("testMethod", String[].class);
+		testMethod.setAccessible(true);
+		
+		String[] arr = {"some string"};
+		testMethod.invoke(main, new Object[]{arr});	
 		
 		dr.str = "Before";
 		System.out.println(dr.str);

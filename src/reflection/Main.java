@@ -19,7 +19,11 @@ public class Main {
 		
 	}
 	
-	private void testMethod(String str) {
+	private void testMethod(String[] str) {
+		System.out.println(str);
+	}
+	
+	private void testMethod(String str, Integer i) {
 		System.out.println(str);
 	}
 

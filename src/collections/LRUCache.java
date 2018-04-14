@@ -45,6 +45,19 @@ public class LRUCache {
 
 		cache.put(key, node);
 	}
+	
+
+	
+	
+	
+
+	@Override
+	public String toString() {
+		return "nodes=" + nodes;
+	}
+
+
+
 
 	private class LRUNode {
 
@@ -55,5 +68,24 @@ public class LRUCache {
 			this.key = key;
 			this.value = value;
 		}
+
+		@Override
+		public String toString() {
+			return "LRUNode [key=" + key + ", value=" + value + "]";
+		}
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		LRUCache lru = new LRUCache(2);
+		lru.put(1, 1);
+		lru.put(2, 2);
+		System.out.println(lru);
+		
+		System.out.println(lru.get(1));
+		lru.put(3, 3);
+		System.out.println(lru);
+		
 	}
 }

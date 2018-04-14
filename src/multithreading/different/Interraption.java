@@ -13,6 +13,9 @@ public class Interraption implements Runnable {
 	      System.out.println("in run() - doing stuff after nap");
 	      System.out.println("in run() - leaving normally");
 	   }
+	   
+	   
+	   
 	   public void work2() throws InterruptedException {
 	      while (true) {
 	    	 System.out.println("thread");
@@ -23,6 +26,8 @@ public class Interraption implements Runnable {
 	         }
 	      }
 	   }
+	   
+	   
 	   public void work() throws InterruptedException {
 	      while (true) {
 	         for (int i = 0; i < 100000; i++) {
@@ -40,6 +45,7 @@ public class Interraption implements Runnable {
 	      Thread t = new Thread(si);
 	      t.start();
 	      
+
 	      try {
 	         Thread.sleep(2000);
 	      } catch (InterruptedException x) { }

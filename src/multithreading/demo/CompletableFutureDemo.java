@@ -41,21 +41,25 @@ public class CompletableFutureDemo {
 //	Future API does not have any exception handling construct.
 	
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
-		CompletableFuture<String> completableFuture = new CompletableFuture<String>();
-//		String result = completableFuture.get();
-		
-		boolean complete = completableFuture.complete("Future's Result");
-		
-		System.out.println(complete);
+//		CompletableFuture<String> completableFuture = new CompletableFuture<String>();
+////		String result = completableFuture.get();
+//
+//		boolean complete = completableFuture.complete("Future's Result");
+//
+//		System.out.println(complete);
 		
 		//  Running asynchronous computation using runAsync()
-		
+//		Thread t = new Thread();
+//		t.setDaemon(true);
+//		System.out.println("Test");
 //		CompletableFuture<Void> future = CompletableFuture.runAsync(new Runnable() {
 //		    @Override
 //		    public void run() {
 //		        // Simulate a long-running Job
 //		        try {
-//		            TimeUnit.SECONDS.sleep(1);
+//		        	System.out.println("I'll run in a separate thread than the main thread.");
+//
+//					TimeUnit.SECONDS.sleep(1);
 //		        } catch (InterruptedException e) {
 //		            throw new IllegalStateException(e);
 //		        }
@@ -71,23 +75,23 @@ public class CompletableFutureDemo {
 		//=====================
 		
 		// Run a task specified by a Supplier object asynchronously
-		CompletableFuture<String> future2 = CompletableFuture.supplyAsync(new Supplier<String>() {
-		    @Override
-		    public String get() {
-		        try {
-		            TimeUnit.SECONDS.sleep(1);
-		        } catch (InterruptedException e) {
-		            throw new IllegalStateException(e);
-		        }
-		        return "Result of the asynchronous computation";
-		    }
-		});
+//		CompletableFuture<String> future2 = CompletableFuture.supplyAsync(new Supplier<String>() {
+//		    @Override
+//		    public String get() {
+//		        try {
+//		            TimeUnit.SECONDS.sleep(1);
+//		        } catch (InterruptedException e) {
+//		            throw new IllegalStateException(e);
+//		        }
+//		        return "Result of the asynchronous computation";
+//		    }
+//		});
+//
+//		// Block and get the result of the Future
+//		String result = future2.get();
+//		System.out.println(result);
 
-		// Block and get the result of the Future
-		String result = future2.get();
-		System.out.println(result);
-		
-		
+
 		
 		// Variations of runAsync() and supplyAsync() methods
 //		static CompletableFuture<Void>  runAsync(Runnable runnable)
@@ -95,120 +99,120 @@ public class CompletableFutureDemo {
 //		static <U> CompletableFuture<U> supplyAsync(Supplier<U> supplier)
 //		static <U> CompletableFuture<U> supplyAsync(Supplier<U> supplier, Executor executor)
 		
-		Executor executor = Executors.newFixedThreadPool(10);
-		CompletableFuture<String> future3 = CompletableFuture.supplyAsync(() -> {
-		    try {
-		        TimeUnit.SECONDS.sleep(1);
-		    } catch (InterruptedException e) {
-		        throw new IllegalStateException(e);
-		    }
-		    return "Result of the asynchronous computation";
-		}, executor);
+//		Executor executor = Executors.newFixedThreadPool(10);
+//		CompletableFuture<String> future3 = CompletableFuture.supplyAsync(() -> {
+//		    try {
+//		        TimeUnit.SECONDS.sleep(1);
+//		    } catch (InterruptedException e) {
+//		        throw new IllegalStateException(e);
+//		    }
+//		    return "Result of the asynchronous computation";
+//		}, executor);
 		
 		
 		// You can attach a callback to the CompletableFuture using thenApply(), thenAccept() and thenRun() methods
 		
 		// Create a CompletableFuture
-		CompletableFuture<String> whatsYourNameFuture = CompletableFuture.supplyAsync(() -> {
-		   try {
-		       TimeUnit.SECONDS.sleep(1);
-		   } catch (InterruptedException e) {
-		       throw new IllegalStateException(e);
-		   }
-		   return "Rajeev";
-		});
+//		CompletableFuture<String> whatsYourNameFuture = CompletableFuture.supplyAsync(() -> {
+//		   try {
+//		       TimeUnit.SECONDS.sleep(1);
+//		   } catch (InterruptedException e) {
+//		       throw new IllegalStateException(e);
+//		   }
+//		   return "Rajeev";
+//		});
+////
+//		// Attach a callback to the Future using thenApply()
+//		CompletableFuture<String> greetingFuture = whatsYourNameFuture.thenApply(name -> {
+//		   return "Hello " + name;
+//		});
+//
+//		// Block and get the result of the future.
+//		System.out.println(greetingFuture.get()); // Hello Rajeev
+//
+//		CompletableFuture<String> welcomeText = CompletableFuture.supplyAsync(() -> {
+//		    try {
+//		        TimeUnit.SECONDS.sleep(1);
+//		    } catch (InterruptedException e) {
+//		       throw new IllegalStateException(e);
+//		    }
+//		    return "Rajeev";
+//		}).thenApply(name -> {
+//		    return "Hello " + name;
+//		}).thenApply(greeting -> {
+//		    return greeting + ", Welcome yeah )";
+//		});
+//
+//		System.out.println(welcomeText.get());
+//		// Prints - Hello Rajeev, Welcome yeah )
+//
 
-		// Attach a callback to the Future using thenApply()
-		CompletableFuture<String> greetingFuture = whatsYourNameFuture.thenApply(name -> {
-		   return "Hello " + name;
-		});
-
-		// Block and get the result of the future.
-		System.out.println(greetingFuture.get()); // Hello Rajeev
-		
-		CompletableFuture<String> welcomeText = CompletableFuture.supplyAsync(() -> {
-		    try {
-		        TimeUnit.SECONDS.sleep(1);
-		    } catch (InterruptedException e) {
-		       throw new IllegalStateException(e);
-		    }
-		    return "Rajeev";
-		}).thenApply(name -> {
-		    return "Hello " + name;
-		}).thenApply(greeting -> {
-		    return greeting + ", Welcome yeah )";
-		});
-
-		System.out.println(welcomeText.get());
-		// Prints - Hello Rajeev, Welcome yeah )
-		
-		
 		// thenAccept() example
-		CompletableFuture.supplyAsync(() -> {
-			return "something";
-		}).thenAccept(result2 -> {
-			System.out.println("Got product detail from remote service " + result2);
-		});
-		
+//		CompletableFuture.supplyAsync(() -> {
+//			return "something";
+//		}).thenAccept(result2 -> {
+//			System.out.println("Got product detail from remote service " + result2);
+//		});
+
 //		// thenRun() example
 //		CompletableFuture.supplyAsync(() -> {
-//		    // Run some computation  
+//		    // Run some computation
 //		}).thenRun(() -> {
 //		    // Computation Finished.
 //		});
-		
-		
-		
-		// Combine two dependent futures using thenCompose()
-		CompletableFuture<CompletableFuture<Double>> result6 = getUsersDetail("")
-				.thenApply(user -> getCreditRating(user));
-		
-		CompletableFuture<Double> result5 = getUsersDetail("1")
-				.thenCompose(user -> getCreditRating(user));
-		
+//
+//
+//
+//		// Combine two dependent futures using thenCompose()
+//		CompletableFuture<CompletableFuture<Double>> result6 = getUsersDetail("")
+//				.thenApply(user -> getCreditRating(user));
+//
+//		CompletableFuture<Double> result5 = getUsersDetail("1")
+//				.thenCompose(user -> getCreditRating(user));
+//
 		
 		
 		
 		// If an error occurs in the original supplyAsync() task, then none of the thenApply() callbacks will be called and future will be resolved with the exception occurred. If an error occurs in first thenApply() callback then 2nd and 3rd callbacks won’t be called and the future will be resolved with the exception occurred, and so on.
 		// Handle exceptions using exceptionally() callback
-		int age = 10;
-		CompletableFuture<String> maturityFuture = CompletableFuture.supplyAsync(() -> {
-		    if(age < 0) {
-		        throw new IllegalArgumentException("Age can not be negative");
-		    }
-		    if(age > 18) {
-		        return "Adult";
-		    } else {
-		        return "Child";
-		    }
-		}).exceptionally(ex -> {
-		    System.out.println("Oops! We have an exception - " + ex.getMessage());
-		    return "Unknown!";
-		});
-		
-		
-	
-
-		CompletableFuture<String> maturityFuture2 = CompletableFuture.supplyAsync(() -> {
-		    if(age < 0) {
-		        throw new IllegalArgumentException("Age can not be negative");
-		    }
-		    if(age > 18) {
-		        return "Adult";
-		    } else {
-		        return "Child";
-		    }
-		}).handle((res, ex) -> {
-		    if(ex != null) {
-		        System.out.println("Oops! We have an exception - " + ex.getMessage());
-		        return "Unknown!";
-		    }
-		    return res;
-		});
-
-		System.out.println("Maturity : " + maturityFuture.get());
-		
-		
+		int age = -1;
+//		CompletableFuture<String> maturityFuture = CompletableFuture.supplyAsync(() -> {
+//		    if(age < 0) {
+//		        throw new IllegalArgumentException("Age can not be negative");
+//		    }
+//		    if(age > 18) {
+//		        return "Adult";
+//		    } else {
+//		        return "Child";
+//		    }
+//		}).exceptionally(ex -> {
+//		    System.out.println("Oops! We have an exception - " + ex.getMessage());
+//		    return "Unknown!";
+//		});
+//
+//
+//
+//
+//		CompletableFuture<String> maturityFuture2 = CompletableFuture.supplyAsync(() -> {
+//		    if(age < 0) {
+//		        throw new IllegalArgumentException("Age can not be negative");
+//		    }
+//		    if(age > 18) {
+//		        return "Adult";
+//		    } else {
+//		        return "Child";
+//		    }
+//		}).handle((res, ex) -> {
+//		    if(ex != null) {
+//		        System.out.println("Oops! We have an exception - " + ex.getMessage());
+//		        return "Unknown!";
+//		    }
+//		    return res;
+//		});
+//
+//		System.out.println("Maturity : " + maturityFuture.get());
+//
+//
 		
 		
 	}

@@ -17,11 +17,13 @@ public class Lock4 {
 
         executor.submit(() -> {
             long stamp = lock.writeLock();
+            long stamp2 = lock.writeLock();
             try {
                 ConcurrentUtils.sleep(1);
                 map.put("foo", "bar");
             } finally {
                 lock.unlockWrite(stamp);
+                lock.unlockWrite(stamp2);
             }
         });
 

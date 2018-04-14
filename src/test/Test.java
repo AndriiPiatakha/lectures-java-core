@@ -2,15 +2,29 @@ package test;
 
 import java.util.Iterator;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Test implements Iterable {
+//	private Predicate predicate;
+//	
+//	public Test(Predicate predicate) {
+//		this.predicate = predicate;
+//	}
+//	
+//	public boolean hasNext() {
+//		// obtain next element
+//		
+//		
+//		return predicate.test(nextElement);
+//	}
 	
 	public static void main(String[] args) {
-		
+//		const
+//		goto
 		String arr = "asd asdas as-da. ,s acas as ! asda asd  z,!-?";
 		String str2 = "as 1 asfd  44 asdfd r34 ";
 		String replace = arr.replaceAll("[ \\.,!-\\?]", "");
@@ -23,6 +37,8 @@ public class Test implements Iterable {
 		System.out.println(replace2);
 		String[] split = arr.split("");
 		System.out.println(split.length);
+		
+//		Test test = new Test((a) -> true);
 		
 	}
 	

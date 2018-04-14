@@ -19,7 +19,7 @@ public class Synchronized1 {
         count = 0;
 
         ExecutorService executor = Executors.newFixedThreadPool(2);
-
+        
         IntStream.range(0, NUM_INCREMENTS)
                 .forEach(i -> executor.submit(Synchronized1::incrementSync));
 
@@ -42,8 +42,14 @@ public class Synchronized1 {
     }
 
     private static synchronized void incrementSync() {
-        count = count + 1;
+    		count = count + 1;
     }
+    
+//    private static void incrementSync() {
+//    	synchronized (Synchronized1.class) {
+//    		count = count + 1;
+//		}
+//    }
 
     private static void increment() {
         count = count + 1;

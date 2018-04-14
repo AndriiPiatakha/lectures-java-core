@@ -1,5 +1,6 @@
 package multithreading.examples1;
 
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -44,7 +45,12 @@ public class Executors2 {
             }
         });
 
-        executor.shutdownNow();
+        List<Runnable> shutdownNow = executor.shutdownNow();
+        boolean awaitTermination = executor.awaitTermination(20, TimeUnit.SECONDS);
+        
+        if (executor.awaitTermination(20, TimeUnit.SECONDS)) {
+        	executor.shutdownNow();
+        }
         future.get();
     }
 

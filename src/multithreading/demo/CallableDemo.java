@@ -31,85 +31,85 @@ public class CallableDemo {
 		    return "Return some result";
 		};
 		
-		ExecutorService executorService = Executors.newSingleThreadExecutor();
-
-        Callable<String> callable3 = () -> {
-            // Perform some computation
-            System.out.println("Entered Callable");
-            Thread.sleep(2000);
-            return "Hello from Callable";
-        };
-
-        System.out.println("Submitting Callable");
-        Future<String> future = executorService.submit(callable);
-
-        // This line executes immediately
-        System.out.println("Do something else while callable is getting executed");
-
-        System.out.println("Retrieve the result of the future");
-        // Future.get() blocks until the result is available
-        String result = future.get();
-        System.out.println(result);
-
-        executorService.shutdown();
-        
+//		ExecutorService executorService = Executors.newSingleThreadExecutor();
+//
+//        Callable<String> callable3 = () -> {
+//            // Perform some computation
+//            System.out.println("Entered Callable");
+//            Thread.sleep(2000);
+//            return "Hello from Callable";
+//        };
+//
+//        System.out.println("Submitting Callable");
+//        Future<String> future = executorService.submit(callable);
+//
+//        // This line executes immediately
+//        System.out.println("Do something else while callable is getting executed");
+//
+//        System.out.println("Retrieve the result of the future");
+//        // Future.get() blocks until the result is available
+//        String result = future.get();
+//        System.out.println(result);
+//
+//        executorService.shutdown();
+//
         
         // ==================================
         
-        ExecutorService executorService2 = Executors.newSingleThreadExecutor();
-
-        Future<String> future4 = executorService.submit(() -> {
-            Thread.sleep(2000);
-            return "Hello from Callable";
-        });
-
-        while(!future4.isDone()) {
-            System.out.println("Task is still not done...");
-            Thread.sleep(200);
-        }
-
-        System.out.println("Task completed! Retrieving the result");
-        String result2 = future4.get();
-        System.out.println(result2);
-
-        executorService.shutdown();
+//        ExecutorService executorService2 = Executors.newSingleThreadExecutor();
+//
+//        Future<String> future4 = executorService2.submit(() -> {
+//            Thread.sleep(2000);
+//            return "Hello from Callable";
+//        });
+//
+//        while(!future4.isDone()) {
+//            System.out.println("Task is still not done...");
+//            Thread.sleep(200);
+//        }
+//
+//        System.out.println("Task completed! Retrieving the result");
+//        String result2 = future4.get();
+//        System.out.println(result2);
+//
+//        executorService2.shutdown();
         
         
         // ============================
         
-        ExecutorService executorService3 = Executors.newSingleThreadExecutor();
+//        ExecutorService executorService3 = Executors.newSingleThreadExecutor();
+//
+//        long startTime = System.nanoTime();
+//        Future<String> future5 = executorService3.submit(() -> {
+//            Thread.sleep(2000);
+//            return "Hello from Callable";
+//        });
+//
+//        while(!future5.isDone()) {
+//            System.out.println("Task is still not done...");
+//            Thread.sleep(200);
+//            double elapsedTimeInSec = (System.nanoTime() - startTime)/1000000000.0;
+//
+//            if(elapsedTimeInSec > 1) {
+//                future5.cancel(true);
+//            }
+//        }
+//
+////        System.out.println("Task completed! Retrieving the result");
+////        String result3 = future5.get();
+////        System.out.println(result3);
+//
+//        executorService3.shutdown();
+//
+//        if(!future5.isCancelled()) {
+//            System.out.println("Task completed! Retrieving the result");
+//            String result4 = future5.get();
+//            System.out.println(result4);
+//        } else {
+//            System.out.println("Task was cancelled");
+//        }
 
-        long startTime = System.nanoTime();
-        Future<String> future5 = executorService3.submit(() -> {
-            Thread.sleep(2000);
-            return "Hello from Callable";
-        });
-
-        while(!future5.isDone()) {
-            System.out.println("Task is still not done...");
-            Thread.sleep(200);
-            double elapsedTimeInSec = (System.nanoTime() - startTime)/1000000000.0;
-
-            if(elapsedTimeInSec > 1) {
-                future5.cancel(true);
-            }
-        }
-
-        System.out.println("Task completed! Retrieving the result");
-        String result3 = future5.get();
-        System.out.println(result3);
-
-        executorService.shutdown();
-        
-        if(!future.isCancelled()) {
-            System.out.println("Task completed! Retrieving the result");
-            String result4 = future5.get();
-            System.out.println(result4);
-        } else {
-            System.out.println("Task was cancelled");
-        }
-        
-        future.get(1, TimeUnit.SECONDS);
+//        future5.get(1, TimeUnit.SECONDS);
         
         // ==========================
         
@@ -139,11 +139,11 @@ public class CallableDemo {
             System.out.println(future2.get());
         }
 
-        executorService.shutdown();
+        executorService6.shutdown();
         
         //===================
         
-        String result7 = executorService.invokeAny(Arrays.asList(task1, task2, task3));
+//        String result7 = executorService.invokeAny(Arrays.asList(task1, task2, task3));
 		
 	}
 

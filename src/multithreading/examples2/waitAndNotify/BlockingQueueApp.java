@@ -67,6 +67,9 @@ class BlockingQueue<T> {
 
     public void put(T element) throws InterruptedException {
         lock.lock();
+//        synchronized(dummyObject) {
+//        	
+//        }
         try {
             while (queue.size() == capacity) {
                 System.out.println("queue is full cannot put");

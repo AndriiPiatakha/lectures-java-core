@@ -9,6 +9,12 @@
 package annotations;
 
 public class BusinessLogic {
+	
+//	@Email(pattern = "")
+//	String name;
+	
+	// @Override
+	
     public BusinessLogic() {
         super();
     }

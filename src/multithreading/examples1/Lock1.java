@@ -21,6 +21,10 @@ public class Lock1 {
             lock.unlock();
         }
     }
+
+    private synchronized static void incrementSynch2() {
+            count++;
+    }
     
     private static void incrementSynch() {
     	synchronized (Lock1.class) {

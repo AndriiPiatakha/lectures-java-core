@@ -1,0 +1,8 @@
+...
+..
+..
+
+<bean id="Car" class="..">
+
+	<attr name="engine" value="com.piatakha.DieselEngine"/>
+</bean>
