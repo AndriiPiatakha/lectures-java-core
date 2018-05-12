@@ -7,7 +7,9 @@ public class BuilderExample {
 
 		director.setComputerBuilder(cheapComputerBuilder);
 		director.constructComputer();
-
+		
+// ==================================
+		
 		final Computer computer = director.getComputer();
 		System.out.println(computer);
 	}

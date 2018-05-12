@@ -11,10 +11,11 @@ public class ComputerDirector {
 		return computerBuilder.getComputer();
 	}
 
-	public void constructComputer() {
+	public Computer constructComputer() {
 		computerBuilder.createNewComputer();
 		computerBuilder.buildSystemBlock();
 		computerBuilder.buildDisplay();
 		computerBuilder.buildManipulators();
+		return new Computer();
 	}
 }

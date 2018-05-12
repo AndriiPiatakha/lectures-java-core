@@ -16,6 +16,7 @@ public class Main {
 		} else {
 			widgetFactory = new MsWindowsWidgetFactory();
 		}
+		
 		builder.buildWindow(widgetFactory);
 	}
 }

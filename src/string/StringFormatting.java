@@ -51,7 +51,7 @@ public class StringFormatting {
 
 //			applies to 							output
 //		%a 	floating point (except BigDecimal) 	Hex output of floating point number
-//		%b 	Any type 	“true” if non-null, “false” if null
+//		%b 	Any type 	ï¿½trueï¿½ if non-null, ï¿½falseï¿½ if null
 //		%c 	character 	Unicode character
 //		%d 	integer (incl. byte, short, int, long, bigint) 	Decimal Integer
 //		%e 	floating point 	decimal number in scientific notation
