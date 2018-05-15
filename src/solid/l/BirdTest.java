@@ -3,7 +3,7 @@ package solid.l;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BirdTest{
+public class BirdTest {
 
 	public static void main(String[] args) {
 		List<Bird> birdList = new ArrayList<Bird>();

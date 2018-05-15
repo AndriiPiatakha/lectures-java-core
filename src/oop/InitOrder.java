@@ -1,6 +1,16 @@
 package oop;
 
 public class InitOrder {
+	private Parent p;
+	
+	public InitOrder() {
+		p = new Parent();
+	}
+	// ||
+	public InitOrder(Parent p) {
+		this.p = p;
+	}
+	
 	public static void main(String[] args) {
 		Parent p = new Child();
 		System.out.println("=====================");

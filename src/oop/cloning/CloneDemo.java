@@ -8,6 +8,7 @@ public class CloneDemo {
 		A a = new A();
 		A clone = (A)a.clone();
 		System.out.println("a = " + a);
+		System.out.println("a == clone: " + (a == clone));
 		System.out.println("clone = " + clone);
 		System.out.println(a.b == clone.b);
 		

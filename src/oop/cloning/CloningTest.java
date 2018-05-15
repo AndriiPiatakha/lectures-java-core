@@ -12,10 +12,10 @@ public class CloningTest {
 		Employee emp = new Employee();
 
 		emp.setId(1);
-		emp.setName("Pankaj");
+		emp.setName("Dima");
 		Map<String, String> props = new HashMap<>();
 		props.put("salary", "10000");
-		props.put("city", "Bangalore");
+		props.put("city", "Obuhov");
 		emp.setProps(props);
 
 		Employee clonedEmp = (Employee) emp.clone();
