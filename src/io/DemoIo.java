@@ -12,6 +12,7 @@ import java.util.Scanner;
 public class DemoIo {
 	
 	public static void main(String[] args) throws IOException {
+		test();
 		String pathToFile = "some3" + File.pathSeparator + "some2";
 		File file = new File("../");
 		

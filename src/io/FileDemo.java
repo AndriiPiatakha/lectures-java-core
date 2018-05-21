@@ -22,8 +22,10 @@ public class FileDemo {
 			System.out.println("Files are exist");
 		}
 		
-		String pathseparator = File.pathSeparator;
-		System.out.println(pathseparator);
+		System.out.println(File.pathSeparator);
+		System.out.println(File.separator);
+		String toWrite = "asdasdasd" + System.lineSeparator() + "new line";
+		System.lineSeparator();
 		
 		file = new File("result.csv");
 		file.createNewFile();
@@ -39,20 +41,27 @@ public class FileDemo {
 		file.isHidden();
 		
 		
+		
+		
+		// int testMethod(File file) {
 		if (file.isDirectory()) {
 			File[] listFiles = file.listFiles();
 			
 			for (File file2 : listFiles) {
 				if (file.isDirectory()) {
-					//call this methom one more time
+					//call this method one more time    testMethod(file)
 				}
 			}
 			System.out.println(listFiles);
 		}
 		
 		
+		
+		
+		
 		System.out.println(file.getPath());
 		System.out.println(file.getAbsolutePath());
+		System.out.println(file.getCanonicalPath());
 		
 		File[] listFiles = file.listFiles(pathname -> pathname.getName().endsWith(".java"));
 		
@@ -61,6 +70,8 @@ public class FileDemo {
 		
 		String[] array = new String[] { "a", "b", "c" };
 		String joined2 = String.join(",", array);
+		
+		System.out.println(joined2);
 		
 //		Files.readAllBytes("");
 

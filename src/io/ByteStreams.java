@@ -52,7 +52,7 @@ public class ByteStreams {
 			while ((i = fis.read()) != -1) {
 				System.out.print((char)i);
 			}
-		}
+		} 
 	}
 	
 	private static void printFileWithFileInputStreamWithBuffer(String path) throws IOException, FileNotFoundException {
@@ -104,6 +104,7 @@ public class ByteStreams {
 	private static void noWriteWithoutFlush(String path, String textToWrite) throws IOException {
 		BufferedWriter bw = new BufferedWriter(new FileWriter(path));
 		bw.write(textToWrite);
+//		bw.flush();
 	}
 	
 	public static void printFileToConsole(String path) throws IOException {

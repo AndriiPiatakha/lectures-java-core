@@ -70,7 +70,9 @@ public class NioDemo {
 			return String.valueOf(path).endsWith(".java");
 		})) 
 		{
-			String joined = stream.sorted().map(String::valueOf).collect(Collectors.joining("; "));
+			String joined = stream.sorted()
+					.map(String::valueOf)
+					.collect(Collectors.joining("; "));
 			System.out.println("Found: " + joined);
 		}
 	}
