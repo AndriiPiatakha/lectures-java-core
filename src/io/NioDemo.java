@@ -21,6 +21,7 @@ public class NioDemo {
 	public static void main(String[] args) throws IOException {
 		String pathToDirectory = "testDirectory" + File.separator + "tesSubDirectory";
 		Path path = Paths.get(pathToDirectory);
+		Paths.get("testDirectory", "tesSubDirectory", "tesSubDirectory2");
 
 		Files.createDirectories(path);
 

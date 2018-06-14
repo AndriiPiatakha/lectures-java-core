@@ -3,12 +3,13 @@ package generic;
 public class GenericDemo1 {
 
 	// generic method printArray
-	public static <E> void printArray(E[] inputArray) {
+	public static <E> E printArray(E[] inputArray) {
 		// Display array elements
 		for (E element : inputArray) {
 			System.out.printf("%s ", element);
 		}
 		System.out.println();
+		return inputArray[0];
 	}
 	
 	

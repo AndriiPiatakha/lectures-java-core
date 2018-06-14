@@ -14,7 +14,6 @@ public class SerialDemo {
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
 		A a = new A(1, "some text");
-//		B b = new B();
 		System.out.println("Object to write = " + a);
 		try (ObjectOutputStream ous = new ObjectOutputStream(
 				new FileOutputStream("serialFile"))) {

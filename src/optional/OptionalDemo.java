@@ -11,12 +11,12 @@ public class OptionalDemo {
 	// references.
 
 	public static void main(String[] args) {
-		// whenCreatesEmptyOptionalThenCorrect();
-		// givenNonNullWhenCreatesNonNullableThenCorrect();
-		// givenNonNullWhenCreatesNullableThenCorrect();
-		// givenOptionalWhenIsPresentWorksThenCorrect();
-		// givenOptionalWhenIfPresentWorksThenCorrect();
-		// whenOrElseWorksThenCorrect();
+//		 whenCreatesEmptyOptionalThenCorrect();
+//		 givenNonNullWhenCreatesNonNullableThenCorrect();
+//		 givenNonNullWhenCreatesNullableThenCorrect();
+//		 givenOptionalWhenIsPresentWorksThenCorrect();
+//		 givenOptionalWhenIfPresentWorksThenCorrect();
+//		 whenOrElseWorksThenCorrect();
 //		whenOrElseGetWorksThenCorrect();
 //		whenOrElseGetAndOrElseOverlapThenCorrect();
 //		whenOrElseGetAndOrElseDifferThenCorrect();
@@ -24,8 +24,8 @@ public class OptionalDemo {
 //		givenOptionalWhenGetsValueThenCorrect();
 //		givenOptionalWithNullWhenGetThrowsExceptionThenCorrect();
 //		whenOptionalFilterWorksThenCorrect();
-		givenOptionalWhenMapWorksThenCorrect();
-		// givenNonNullWhenCreatesNullableThenCorrect();
+//		givenOptionalWhenMapWorksThenCorrect();
+//		 givenNonNullWhenCreatesNullableThenCorrect();
 	}
 
 	public static void whenCreatesEmptyOptionalThenCorrect() {
@@ -39,6 +39,13 @@ public class OptionalDemo {
 		Optional<String> ofString = Optional.of(name);
 		System.out.println(ofString.toString());
 		System.out.println(ofString.get());
+		
+//		if (ofString != null) {
+//			
+//		}
+		if (ofString.isPresent()) {
+			System.out.println(ofString.get());
+		}
 	}
 
 	// in case we expect some null values for
@@ -50,8 +57,8 @@ public class OptionalDemo {
 		System.out.println("Optional[baeldung] " + opt.toString());
 
 		// NPE
-		// name = null;
-		// Optional.of(name);
+//		 name = null;
+//		 Optional.of(name);
 	}
 
 	public static void givenOptionalWhenIsPresentWorksThenCorrect() {
@@ -66,12 +73,12 @@ public class OptionalDemo {
 		Optional<String> opt = Optional.of("some value");
 
 		opt.ifPresent(name -> System.out.println(name.length()));
+		
 		// instead of
 		String someValue = null;
-
-		// if (someValue != null) {
-		// System.out.println(someValue.length());
-		// }
+		if (someValue != null) {
+			System.out.println(someValue.length());
+		}
 
 	}
 

@@ -32,10 +32,12 @@ public class GenericDemo3<T> {
 		System.out.printf("Integer Value :%d\n\n", integer);
 		System.out.printf("String Value :%s\n", string);
 		
+		// ======================
+		
 		List<Integer> coll = new ArrayList<>();
 		List coll2 = new ArrayList();
 		coll2.add("String");
-		
+		coll2.add(1);
 		coll = coll2;
 		
 		Integer integer2 = coll.get(0);

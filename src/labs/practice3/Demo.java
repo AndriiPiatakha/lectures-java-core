@@ -36,7 +36,7 @@ public class Demo {
 	 * Enter point.
 	 * Demonstrates all of the subtasks. 
 	 */
-
+ 
 	public static void main(String[] args) throws NoSuchAlgorithmException {
 		
 		System.out.println("Demo of subtask 01.1: ");

@@ -7,7 +7,6 @@ public class Client {
 	public static void main(String[] args) {
 		TravelFacade facade = new TravelFacade();
 		List<TravelRoute> flightsAndHotels = 
-				facade.getFlightsAndHotels(
-						new Date(), new Date());
+				facade.getFlightsAndHotels(new Date(), new Date());
 	}
 }
