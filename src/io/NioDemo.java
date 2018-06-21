@@ -75,6 +75,8 @@ public class NioDemo {
 					.map(String::valueOf)
 					.collect(Collectors.joining("; "));
 			System.out.println("Found: " + joined);
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 

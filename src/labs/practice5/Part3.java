@@ -13,7 +13,7 @@ public class Part3 implements Runnable {
 	 * First counter.
 	 */
 	public int counter1 = 0;
-	
+	 
 	/**
 	 * Second counter.
 	 */

@@ -20,7 +20,7 @@ public class Semaphore1 {
 
     private static void testIncrement() {
         ExecutorService executor = Executors.newFixedThreadPool(2);
-
+        
         IntStream.range(0, NUM_INCREMENTS)
                 .forEach(i -> executor.submit(Semaphore1::increment));
 
@@ -32,8 +32,9 @@ public class Semaphore1 {
     private static void increment() {
         boolean permit = false;
         try {
-            permit = semaphore.tryAcquire(5, TimeUnit.SECONDS);
+            permit = semaphore.tryAcquire(2, TimeUnit.SECONDS);
             count++;
+            TimeUnit.SECONDS.sleep(3);
         }
         catch (InterruptedException e) {
             throw new RuntimeException("could not increment");

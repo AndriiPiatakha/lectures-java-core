@@ -63,6 +63,8 @@ public class Executors3 {
                 .forEach(System.out::println);
 
         executor.shutdown();
+        
+        executor.submit(() -> "asdasd");
     }
 
     private static void test3() {

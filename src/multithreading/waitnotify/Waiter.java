@@ -17,6 +17,10 @@ public class Waiter implements Runnable {
 						" waiting to get notified at time:" 
 						+ System.currentTimeMillis());
 				msg.wait();
+				
+//				while (!condition user.getSecurityNumber.equals(111)) {
+//					msg.wait();
+//				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

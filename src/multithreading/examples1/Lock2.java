@@ -22,8 +22,8 @@ public class Lock2 {
         });
 
         executor.submit(() -> {
-        	lock.getHoldCount();
-        	lock.getQueueLength();
+        	System.out.println("Hold count: " + lock.getHoldCount());
+        	System.out.println("Queue lenght " + lock.getQueueLength());
             System.out.println("Locked: " + lock.isLocked());
             System.out.println("Held by me: " + lock.isHeldByCurrentThread());
             ConcurrentUtils.sleep(2);

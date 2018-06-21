@@ -38,10 +38,10 @@ public class DeadLockExample {
 		t1.start();
 		t2.start();
 
-		CompletableFuture.supplyAsync(() -> {
-				System.out.println("SMTH");
-				return null;
-		});
+//		CompletableFuture.supplyAsync(() -> {
+//				System.out.println("SMTH");
+//				return null;
+//		});
 
 
 	}

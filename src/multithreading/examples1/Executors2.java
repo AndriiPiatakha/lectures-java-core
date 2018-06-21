@@ -29,7 +29,9 @@ public class Executors2 {
             }
         });
 
-        future.get(1, TimeUnit.SECONDS);
+        Integer integer = future.get(3, TimeUnit.SECONDS);
+        System.out.println("After");
+        executor.shutdownNow();
     }
 
     private static void test2() throws InterruptedException, ExecutionException {
@@ -48,7 +50,8 @@ public class Executors2 {
         List<Runnable> shutdownNow = executor.shutdownNow();
         boolean awaitTermination = executor.awaitTermination(20, TimeUnit.SECONDS);
         
-        if (executor.awaitTermination(20, TimeUnit.SECONDS)) {
+        if (executor.awaitTermination(3, TimeUnit.SECONDS)) {
+        	System.out.println("ADSD");
         	executor.shutdownNow();
         }
         future.get();
