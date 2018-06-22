@@ -37,7 +37,7 @@ public class TestDemo extends Parent implements I, A{
 		int modifiers = c.getModifiers();
 //		System.out.println(modifiers);
 //		System.out.println(Modifier.isPublic(modifiers));
-//		System.out.println(c.getSuperclass().getName());
+		System.out.println(c.getSuperclass().getName());
 		
 		Class[] interfaces = c.getInterfaces();
 		Arrays.stream(interfaces).forEach(System.out::println);

@@ -103,10 +103,10 @@ public class Demo {
 class Demo2 extends Demo {
 	
 	@Override
-	public void doSmth() 
+	public void doSmth()
 //			throws IOException 
 	{
-		
+//		throw new RuntimeException(new IOException());
 	}
 	
 }

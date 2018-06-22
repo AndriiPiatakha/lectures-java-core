@@ -19,6 +19,10 @@ public class BusinessLogic {
         super();
     }
     
+//    public void test(@Valid User user, BindingResult br) {
+//    	
+//    }
+    
     public void compltedMethod() {
         System.out.println("This method is complete");
     }    

@@ -23,13 +23,17 @@ public class CallableDemo {
 		    }
 		};
 		
-		//Note that with Callable, you don’t need to surround Thread.sleep() by a try/catch block, because unlike Runnable, a Callable can throw a checked exception.
+		//Note that with Callable, you don’t need to surround 
+		// Thread.sleep() by a try/catch block, because unlike Runnable, 
+		// a Callable can throw a checked exception.
 		
 		Callable<String> callable2 = () -> {
 		    // Perform some computation
 		    Thread.sleep(2000);
 		    return "Return some result";
 		};
+		
+		// ===========================
 		
 //		ExecutorService executorService = Executors.newSingleThreadExecutor();
 //
@@ -52,7 +56,7 @@ public class CallableDemo {
 //        System.out.println(result);
 //
 //        executorService.shutdown();
-//
+
         
         // ==================================
         
@@ -108,38 +112,38 @@ public class CallableDemo {
 //        } else {
 //            System.out.println("Task was cancelled");
 //        }
-
+//
 //        future5.get(1, TimeUnit.SECONDS);
         
         // ==========================
         
-        ExecutorService executorService6 = Executors.newFixedThreadPool(5);
-
-        Callable<String> task1 = () -> {
-            Thread.sleep(2000);
-            return "Result of Task1";
-        };
-
-        Callable<String> task2 = () -> {
-            Thread.sleep(1000);
-            return "Result of Task2";
-        };
-
-        Callable<String> task3 = () -> {
-            Thread.sleep(5000);
-            return "Result of Task3";
-        };
-
-        List<Callable<String>> taskList = Arrays.asList(task1, task2, task3);
-
-        List<Future<String>> futures = executorService6.invokeAll(taskList);
-
-        for(Future<String> future2 : futures) {
-            // The result is printed only after all the futures are complete. (i.e. after 5 seconds)
-            System.out.println(future2.get());
-        }
-
-        executorService6.shutdown();
+//        ExecutorService executorService6 = Executors.newFixedThreadPool(5);
+//
+//        Callable<String> task1 = () -> {
+//            Thread.sleep(2000);
+//            return "Result of Task1";
+//        };
+//
+//        Callable<String> task2 = () -> {
+//            Thread.sleep(1000);
+//            return "Result of Task2";
+//        };
+//
+//        Callable<String> task3 = () -> {
+//            Thread.sleep(5000);
+//            return "Result of Task3";
+//        };
+//
+//        List<Callable<String>> taskList = Arrays.asList(task1, task2, task3);
+//
+//        List<Future<String>> futures = executorService6.invokeAll(taskList);
+//
+//        for(Future<String> future2 : futures) {
+//            // The result is printed only after all the futures are complete. (i.e. after 5 seconds)
+//            System.out.println(future2.get());
+//        }
+//
+//        executorService6.shutdown();
         
         //===================
         

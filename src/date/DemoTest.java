@@ -21,6 +21,7 @@ import java.time.temporal.TemporalAdjusters;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 import java.util.Set;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
@@ -51,6 +52,7 @@ public class DemoTest {
 
 	public static void calendarEx1() throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		sdf.setTimeZone(TimeZone.getDefault());
 		Date dateParsed = sdf.parse("1999/01/10 10:02:02");
 		System.out.println(dateParsed);
 		Date from = Date.from(Instant.now());

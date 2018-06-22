@@ -14,27 +14,36 @@ public class CompletableFutureDemo {
 //	Limitations of Future
 //	It cannot be manually completed :
 //
-//	Let’s say that you’ve written a function to fetch the latest price of an e-commerce product from a remote API. Since this API call is time-consuming, you’re running it in a separate thread and returning a Future from your function.
+//	Let’s say that you’ve written a function to fetch the latest price of an 
+//	e-commerce product from a remote API. Since this API call is time-consuming, 
+//	you’re running it in a separate thread and returning a Future from your function.
 //
-//	Now, let’s say that If the remote API service is down, then you want to complete the Future manually by the last cached price of the product.
+//	Now, let’s say that If the remote API service is down, then you want 
+//	to complete the Future manually by the last cached price of the product.
 //
 //	Can you do this with Future? No!
 //
 //	You cannot perform further action on a Future’s result without blocking:
 //
-//	Future does not notify you of its completion. It provides a get() method which blocks until the result is available.
+//	Future does not notify you of its completion. It provides a get() method 
+//	which blocks until the result is available.
 //
-//	You don’t have the ability to attach a callback function to the Future and have it get called automatically when the Future’s result is available.
+//	You don’t have the ability to attach a callback function to the Future and 
+//	have it get called automatically when the Future’s result is available.
 //
 //	Multiple Futures cannot be chained together :
 //
-//	Sometimes you need to execute a long-running computation and when the computation is done, you need to send its result to another long-running computation, and so on.
+//	Sometimes you need to execute a long-running computation and when the 
+//	computation is done, you need to send its result to another 
+//	long-running computation, and so on.
 //
 //	You can not create such asynchronous workflow with Futures.
 //
 //	You can not combine multiple Futures together :
 //
-//	Let’s say that you have 10 different Futures that you want to run in parallel and then run some function after all of them completes. You can’t do this as well with Future.
+//	Let’s say that you have 10 different Futures that you want to run in parallel 
+//	and then run some function after all of them completes. 
+//	You can’t do this as well with Future.
 //
 //	No Exception Handling :
 //
@@ -47,34 +56,35 @@ public class CompletableFutureDemo {
 //		boolean complete = completableFuture.complete("Future's Result");
 //
 //		System.out.println(complete);
-		
-		//  Running asynchronous computation using runAsync()
-//		Thread t = new Thread();
-//		t.setDaemon(true);
+		// ========================
+//	//	  Running asynchronous computation using runAsync()
+//	//	Thread t = new Thread();
+//	//	t.setDaemon(true);
+//		
 //		System.out.println("Test");
 //		CompletableFuture<Void> future = CompletableFuture.runAsync(new Runnable() {
 //		    @Override
 //		    public void run() {
 //		        // Simulate a long-running Job
 //		        try {
-//		        	System.out.println("I'll run in a separate thread than the main thread.");
+//		        	System.out.println("I'll run in a separate thread than the main thread." + Thread.currentThread().getName());
 //
 //					TimeUnit.SECONDS.sleep(1);
 //		        } catch (InterruptedException e) {
 //		            throw new IllegalStateException(e);
 //		        }
-//		        System.out.println("I'll run in a separate thread than the main thread.");
+//		        System.out.println("I'll run in a separate thread than the main thread." + Thread.currentThread().getName());
 //		    }
 //		});
 //
 //		// Block and wait for the future to complete
 //		System.out.println("This thread");
 //		Void void1 = future.get();
-		
-		
+//		
+//		System.out.println(void1);
 		//=====================
 		
-		// Run a task specified by a Supplier object asynchronously
+//		 Run a task specified by a Supplier object asynchronously
 //		CompletableFuture<String> future2 = CompletableFuture.supplyAsync(new Supplier<String>() {
 //		    @Override
 //		    public String get() {
@@ -83,7 +93,7 @@ public class CompletableFutureDemo {
 //		        } catch (InterruptedException e) {
 //		            throw new IllegalStateException(e);
 //		        }
-//		        return "Result of the asynchronous computation";
+//		        return "Result of the asynchronous computation" + Thread.currentThread().getName();
 //		    }
 //		});
 //
@@ -91,13 +101,15 @@ public class CompletableFutureDemo {
 //		String result = future2.get();
 //		System.out.println(result);
 
-
+//=================================================
 		
 		// Variations of runAsync() and supplyAsync() methods
 //		static CompletableFuture<Void>  runAsync(Runnable runnable)
 //		static CompletableFuture<Void>  runAsync(Runnable runnable, Executor executor)
 //		static <U> CompletableFuture<U> supplyAsync(Supplier<U> supplier)
 //		static <U> CompletableFuture<U> supplyAsync(Supplier<U> supplier, Executor executor)
+		
+		
 		
 //		Executor executor = Executors.newFixedThreadPool(10);
 //		CompletableFuture<String> future3 = CompletableFuture.supplyAsync(() -> {
@@ -110,7 +122,8 @@ public class CompletableFutureDemo {
 //		}, executor);
 		
 		
-		// You can attach a callback to the CompletableFuture using thenApply(), thenAccept() and thenRun() methods
+		// You can attach a callback to the CompletableFuture using 
+		// thenApply(), thenAccept() and thenRun() methods
 		
 		// Create a CompletableFuture
 //		CompletableFuture<String> whatsYourNameFuture = CompletableFuture.supplyAsync(() -> {
@@ -119,9 +132,9 @@ public class CompletableFutureDemo {
 //		   } catch (InterruptedException e) {
 //		       throw new IllegalStateException(e);
 //		   }
-//		   return "Rajeev";
+//		   return "Test";
 //		});
-////
+//
 //		// Attach a callback to the Future using thenApply()
 //		CompletableFuture<String> greetingFuture = whatsYourNameFuture.thenApply(name -> {
 //		   return "Hello " + name;
@@ -136,7 +149,7 @@ public class CompletableFutureDemo {
 //		    } catch (InterruptedException e) {
 //		       throw new IllegalStateException(e);
 //		    }
-//		    return "Rajeev";
+//		    return "TestName";
 //		}).thenApply(name -> {
 //		    return "Hello " + name;
 //		}).thenApply(greeting -> {
@@ -144,7 +157,7 @@ public class CompletableFutureDemo {
 //		});
 //
 //		System.out.println(welcomeText.get());
-//		// Prints - Hello Rajeev, Welcome yeah )
+//		
 //
 
 		// thenAccept() example
@@ -156,6 +169,7 @@ public class CompletableFutureDemo {
 
 //		// thenRun() example
 //		CompletableFuture.supplyAsync(() -> {
+//			return "";
 //		    // Run some computation
 //		}).thenRun(() -> {
 //		    // Computation Finished.
@@ -169,7 +183,7 @@ public class CompletableFutureDemo {
 //
 //		CompletableFuture<Double> result5 = getUsersDetail("1")
 //				.thenCompose(user -> getCreditRating(user));
-//
+
 		
 		
 		
