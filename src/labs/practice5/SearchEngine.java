@@ -1,6 +1,7 @@
 package labs.practice5;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.Callable;
@@ -129,9 +130,11 @@ public class SearchEngine {
 	 * Takes an array of Callable objects as a parameter.
 	 *  
 	 * @param arrFinders array of objects of Callable type.
+	 * @throws InterruptedException 
 	 */
-	private void runFinders(Callable<Integer>[] arrFinders) {
+	private void runFinders(Callable<Integer>[] arrFinders) throws InterruptedException {
 		ExecutorService es = Executors.newCachedThreadPool();
+//		List<Future<Integer>> futureList = es.invokeAll(Arrays.asList(arrFinders));
 		for (int i = 0; i < arrFinders.length; i++) {
 			arrFinders[i] = new Finder(i);
 			futureList.add(es.submit(arrFinders[i]));
