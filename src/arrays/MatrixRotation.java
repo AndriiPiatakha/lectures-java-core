@@ -6,7 +6,10 @@ import java.util.Scanner;
 public class MatrixRotation {
 
 	public static void main(String[] args) {
-		int[][] matrix = { { 1, 2, 3, 4, 5 }, { 1, 2, 3, 4, 5 }, { 1, 2, 3, 4, 5 }, { 1, 2, 3, 4, 5 },
+		int[][] matrix = { { 1, 2, 3, 4, 5 }, 
+				{ 1, 2, 3, 4, 5 }, 
+				{ 1, 2, 3, 4, 5 }, 
+				{ 1, 2, 3, 4, 5 },
 				{ 1, 2, 3, 4, 5 } };
 
 		try (Scanner sc = new Scanner(System.in);) {

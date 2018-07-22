@@ -7,7 +7,7 @@ import java.util.Locale;
 public class StringFormatting {
 	
 	public static final String INVALID_UOM_ERROR_MESSAGE = 
-			"uom %d is invalid for product %s";
+			"uom %d is invalid for product %s asdas %d asdas %d";
 
 	public static void main(String[] args) {
 		
