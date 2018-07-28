@@ -2,9 +2,6 @@ package multithreading;
 
 import java.util.Arrays;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
-
-import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
 
 public class Sasha {
 	public int[] giveMeRandomNumbers() {
