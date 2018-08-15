@@ -11,6 +11,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -38,7 +39,7 @@ public class ByteStreams {
 //		
 //		printFileWithBuffer(filePath);
 //		
-//		writeFileToPath("testWrite.txt", "some text to write \nand more text русские буквы");
+//		writeFileToPath("testWrite.txt", "some text to write \nand more text Ñ€ÑƒÑ�Ñ�ÐºÐ¸Ðµ Ð±ÑƒÐºÐ²Ñ‹");
 //		writeFileToPathFileWriter("testWrite2.txt", "some text to write \nand more text");
 //		noWriteWithoutFlush("testWrite3.txt", "some text to write \nand more text");
 		
@@ -52,7 +53,7 @@ public class ByteStreams {
 			while ((i = fis.read()) != -1) {
 				System.out.print((char)i);
 			}
-		} 
+		}
 	}
 	
 	private static void printFileWithFileInputStreamWithBuffer(String path) throws IOException, FileNotFoundException {
