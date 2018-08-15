@@ -2,9 +2,13 @@ package oop;
 
 import java.util.Objects;
 
-public class Test {
+public class Test  {
 	
 	public static void main(String[] args) {
+		Book2 b = new Book2();
+		b.clone();
+		Test t = new Test();
+//		t.clone();
 		
 	}
 
@@ -14,10 +18,17 @@ class Book2 {
 	
 	private String name;
 	private int publishYear;
+	private Book2 b;
+	
+	@Override
+	public Object clone() {
+		return null;
+	}
 	
 	@Override
 	public String toString() {
 		return "Book [name=" + name + ", publishYear=" + publishYear + "]";
+		
 	}
 	
 //	@Override

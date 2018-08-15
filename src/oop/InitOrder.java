@@ -15,7 +15,7 @@ public class InitOrder {
 		Parent p = new Child();
 		System.out.println("=====================");
 		Parent p2 = new Child();
-		System.out.println(Parent.class);
+//		System.out.println(Parent.class);
 	}
 
 }

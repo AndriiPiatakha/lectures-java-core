@@ -44,15 +44,15 @@ public class Employee implements Cloneable {
 
 	// Default cloning looked like this
 
-	// @Override
-	// public Object clone() throws CloneNotSupportedException {
-	//
-	// Employee e = new Employee();
-	// e.setId(this.id);
-	// e.setName(this.name);
-	// e.setProps(this.props);
-	// return e;
-	// }
+//	 @Override
+//	 public Object clone() throws CloneNotSupportedException {
+//	
+//	 Employee e = new Employee();
+//	 e.setId(this.id);
+//	 e.setName(this.name);
+//	 e.setProps(this.props);
+//	 return e;
+//	 }
 
 	// DEEP CLONING
 

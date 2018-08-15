@@ -12,23 +12,23 @@ public class Demo {
 
 	public static void main(String[] args) {
 		// test();
-		// throw
-		// throws
+//		 throw
+//		 throws
 
-		// throw new IllegalArgumentException();
+//		 throw new IllegalArgumentException();
 //		if (true) {
 //			throw new IllegalArgumentException();
 ////			throw new RuntimeException(new FileNotFoundException());
 //		}
 //		System.out.println("You won't see me");
 		
-//		try {
-//			System.out.println(5 / 0);
-//		} catch (NullPointerException ex) {
-//			System.out.println("Error is happened");
-//			t.getCause();
-//			t.initCause(new FileNotFoundException());
-//			throw t;
+		try {
+			System.out.println(5 / 0);
+		} catch (NullPointerException t) {
+			System.out.println("Error is happened");
+			t.getCause();
+			t.initCause(new FileNotFoundException());
+			throw t;
 //		} catch (ArithmeticException ae) {
 //			System.out.println("Here are you");
 //			System.exit(1);
@@ -36,11 +36,11 @@ public class Demo {
 //		} catch (ArithmeticException | NullPointerException ex) {
 //			
 //		}
-//		} finally {
-//			System.out.println("You will see me for sure");
-//			System.out.println(5 / 0);
-//			System.out.println("Hello");
-//		}
+		} finally {
+			System.out.println("You will see me for sure");
+			System.out.println(5 / 0);
+			System.out.println("Hello");
+		}
 		
 		// try-catch-finally
 		// try-finally
@@ -57,11 +57,11 @@ public class Demo {
 		
 		
 		
-		try {
-			new Demo().doSmth();
-		} catch (FileNotFoundException | SQLException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			new Demo().doSmth();
+//		} catch (FileNotFoundException | SQLException e) {
+//			e.printStackTrace();
+//		}
 		
 		Writer w;
 		try {
@@ -71,10 +71,33 @@ public class Demo {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		throw new CustomException();
+//		
+//		throw new CustomException();
 	
+		 
+		 
+		 
+		try {
+			readFromFile("");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		// someOtherMethod();
+		
+		
+		Demo d = new Demo2();
+		try {
+			d.doSmth();
+		} catch (FileNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
+	}
+	
+	public static String readFromFile(String filePath) throws IOException {
+		return "content";
 	}
 
 	public static void test() {
@@ -101,9 +124,9 @@ public class Demo {
 }
 
 class Demo2 extends Demo {
-	
+
 	@Override
-	public void doSmth()
+	public void doSmth() 
 //			throws IOException 
 	{
 //		throw new RuntimeException(new IOException());

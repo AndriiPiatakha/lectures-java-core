@@ -25,6 +25,10 @@ public class CloningTest {
 		
 		System.out.println("emp and clonedEmp HashMap == test: " + (emp.getProps() == clonedEmp.getProps()));
 		
+		
+		emp.setId(2);
+		System.out.println(emp.getId());
+		System.out.println(clonedEmp.getId());
 		// Lets see the effect of using default cloning
 		
 		// change emp props
