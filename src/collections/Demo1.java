@@ -45,6 +45,7 @@ public class Demo1 {
 //		System.out.println(iterator.next());
 //		System.out.println(iterator.next());
 //		iterator.remove();
+//		System.out.println(list);
 //		iterator.remove();
 		
 //		while(iterator.hasNext()) {
@@ -71,7 +72,7 @@ public class Demo1 {
 //		while(iterator.hasNext()) {
 ////			System.out.println(i++);
 //			String next = iterator.next();
-////			list.remove(next); // will lead us to ConcurModException
+//			list.remove(next); // will lead us to ConcurModException
 //			iterator.remove();
 //			System.out.println(next);
 //		}

@@ -32,14 +32,16 @@ public class NioDemo {
 		
 		Path p = Paths.get("test", "test");
 		Stream<Path> list = Files.list(p);
+		Stream<String> lines = Files.lines(p);
+		
 		Files.walk(p).filter(file -> true);
 		Files.find(p, 1, (path2, attr) -> true);
-		Files.lines(p);
-		Files.readAllLines(p);
+		
+		List<String> readAllLines = Files.readAllLines(p);
 		
 		//try with resources
 		Files.createDirectory(p);
-		try (Stream<String> str = Files.lines(p);
+		try (Stream<String> str = lines;
 				Scanner sc = new Scanner(System.in);) {
 			
 		} finally {

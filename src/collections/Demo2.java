@@ -21,27 +21,27 @@ public class Demo2 {
 
 	public static void main(String[] args) {
 
-		// Set<String> set = new HashSet<>(Arrays.asList("as", "asda", "as"));
-		// // LinkeHashSet
-		//
-		// Set<CustomObject> set2 = new HashSet<>(20, 0.90F);
-		//
-		//// for (String string : set) {
-		//// System.out.println(string);
-		//// }
-		//
-		// CustomObject co = new CustomObject();
-		// set2.add(co);
-		// System.out.println(set2.add(co));
-		//
-		// System.out.println(set2.size());
+//		 Set<String> set = new HashSet<>(Arrays.asList("as", "asda", "as"));
+//		 // LinkeHashSet
+//		
+//		 Set<CustomObject> set2 = new HashSet<>(20, 0.90F);
+//		
+//		// for (String string : set) {
+//		// System.out.println(string);
+//		// }
+//		
+//		 CustomObject co = new CustomObject();
+//		 set2.add(co);
+//		 System.out.println(set2.add(co));
+//		
+//		 System.out.println(set2.size());
 
-//		Set<CustomObject> set3 = new HashSet<>();
-//
-//		set3.add(new CustomObject(1));
-//		set3.add(new CustomObject(1));
-//
-//		System.out.println(set3.size());
+		Set<CustomObject> set3 = new HashSet<>();
+
+		set3.add(new CustomObject(1));
+		set3.add(new CustomObject(1));
+
+		System.out.println(set3.size());
 
 //		Set<CustomObject2> set4 = new HashSet<>();
 //		System.out.println(new Object().hashCode());

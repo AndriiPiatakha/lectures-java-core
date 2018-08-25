@@ -14,9 +14,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.SortedMap;
 import java.util.stream.Stream;
 import static java.nio.file.StandardOpenOption.*;
 
@@ -44,6 +46,8 @@ public class Demo {
 	private static void readFile() throws IOException {
 		try (Stream<String> stream = Files.lines(Paths.get("test.txt"), 
 				Charset.forName("windows-1251"))) {
+//			StandardCharsets.UTF_8;
+//			SortedMap<String, Charset> availableCharsets = Charset.availableCharsets();
 			stream.forEach(System.out::println);
 		}
 	}
