@@ -53,6 +53,10 @@ public class DemoTest {
 	public static void calendarEx1() throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		sdf.setTimeZone(TimeZone.getDefault());
+		
+//		Set<String> availableZoneIds = ZoneId.getAvailableZoneIds();
+//		TimeZone.getTimeZone(ZoneId.of(""))
+		
 		Date dateParsed = sdf.parse("1999/01/10 10:02:02");
 		System.out.println(dateParsed);
 		Date from = Date.from(Instant.now());

@@ -29,18 +29,18 @@ public class TestDemo extends Parent implements I, A{
 	
 	public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException, NoSuchMethodException, InvocationTargetException, ClassNotFoundException {
 		Class c = TestDemo.class;
-		
-
-		
-		FileFilter ff = TestDemo::test;
-		
-		int modifiers = c.getModifiers();
+//		
+//
+//		
+//		FileFilter ff = TestDemo::test;
+//		
+//		int modifiers = c.getModifiers();
 //		System.out.println(modifiers);
 //		System.out.println(Modifier.isPublic(modifiers));
-		System.out.println(c.getSuperclass().getName());
+//		System.out.println(c.getSuperclass().getName());
 		
 		Class[] interfaces = c.getInterfaces();
-		Arrays.stream(interfaces).forEach(System.out::println);
+//		Arrays.stream(interfaces).forEach(System.out::println);
 		
 		Field[] fields = c.getFields();
 //		Arrays.stream(fields).forEach(System.out::println);
@@ -54,13 +54,17 @@ public class TestDemo extends Parent implements I, A{
 		testDemo.setStr("test2");
 //		System.out.println(field.get(testDemo));
 		
+		field.setAccessible(true);
+		field.set(testDemo, "CHANGED VALUE");
+//		System.out.println(field.get(testDemo));
+		
 		Method method = c.getDeclaredMethod("testMethod", String.class);
 //		method.setAccessible(true);
 		method.invoke(testDemo, "asdasd");
 		
 		Main main = new Main();
 		Class classMain = main.getClass();
-		Method method2 = classMain.getDeclaredMethod("testMethod", String.class);
+//		Method method2 = classMain.getDeclaredMethod("testMethod", String.class);
 //		method2.setAccessible(true);
 //		method2.invoke(main, "aqsqcqc");
 		
@@ -76,9 +80,9 @@ public class TestDemo extends Parent implements I, A{
 		D<ChildChildA> d = new D<>(new ChildChildA());
 //		System.out.println(d.getT());
 		
-		test2(d);
+//		test2(d);
 		
-		method3(new ChildA());
+//		method3(new ChildA());
 		TreeSet<String> ts = new TreeSet<>();
 		
 		Class c10 = new Comparator<String>() {
@@ -90,18 +94,18 @@ public class TestDemo extends Parent implements I, A{
 			}
 		}.getClass();
 		
-		System.out.println(c10.isAnonymousClass());
+//		System.out.println(c10.isAnonymousClass());
 		
-		Class.forName("some.jdbc.driver.Class");
+//		Class.forName("some.jdbc.driver.Class");
 		
-		c.getConstructor(String.class, Integer.class);
-		Constructor[] constructors = c.getConstructors();
-		for (Constructor constructor : constructors) {
-			TypeVariable[] typeParameters = constructor.getTypeParameters();
-			for (TypeVariable typeVariable : typeParameters) {
-				String name = typeVariable.getName();
-			}
-		}
+//		c.getConstructor(String.class, Integer.class);
+//		Constructor[] constructors = c.getConstructors();
+//		for (Constructor constructor : constructors) {
+//			TypeVariable[] typeParameters = constructor.getTypeParameters();
+//			for (TypeVariable typeVariable : typeParameters) {
+//				String name = typeVariable.getName();
+//			}
+//		}
 	}
 	
 	public void setStr(String str) {

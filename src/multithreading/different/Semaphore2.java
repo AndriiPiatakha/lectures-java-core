@@ -25,6 +25,7 @@ public class Semaphore2 {
     private static void doWork() {
         boolean permit = false;
         try {
+//        	semaphore.acquire();
             permit = semaphore.tryAcquire(1, TimeUnit.SECONDS);
             if (permit) {
                 System.out.println("Semaphore acquired");

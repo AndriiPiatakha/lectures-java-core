@@ -22,6 +22,8 @@ public class GenericDemo {
 		
 		// can call only if generic
 		someMethod(list);
+		
+		
 		for (Child child2 : list) {
 			
 		}

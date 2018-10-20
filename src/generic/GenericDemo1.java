@@ -21,13 +21,20 @@ public class GenericDemo1 {
 		Character[] charArray = { 'H', 'E', 'L', 'L', 'O' };
 
 		System.out.println("Array integerArray contains:");
-		printArray(intArray); // pass an Integer array
+		Integer printArray = printArray(intArray); // pass an Integer array
 
 		System.out.println("\nArray doubleArray contains:");
-		printArray(doubleArray); // pass a Double array
+		Double printArray2 = printArray(doubleArray); // pass a Double array
 
 		System.out.println("\nArray characterArray contains:");
-		printArray(charArray); // pass a Character array
+		Character printArray3 = printArray(charArray); // pass a Character array
 	}
 
+}
+
+class SomeClass15 {
+	
+	public void doSmth() {
+		
+	}
 }

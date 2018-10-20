@@ -11,12 +11,12 @@ public class OptionalDemo {
 	// references.
 
 	public static void main(String[] args) {
-//		 whenCreatesEmptyOptionalThenCorrect();
-//		 givenNonNullWhenCreatesNonNullableThenCorrect();
-//		 givenNonNullWhenCreatesNullableThenCorrect();
-//		 givenOptionalWhenIsPresentWorksThenCorrect();
-//		 givenOptionalWhenIfPresentWorksThenCorrect();
-//		 whenOrElseWorksThenCorrect();
+//		whenCreatesEmptyOptionalThenCorrect();
+//		givenNonNullWhenCreatesNonNullableThenCorrect();
+//		givenNonNullWhenCreatesNullableThenCorrect();
+//		givenOptionalWhenIsPresentWorksThenCorrect();
+//		givenOptionalWhenIfPresentWorksThenCorrect();
+//		whenOrElseWorksThenCorrect();
 //		whenOrElseGetWorksThenCorrect();
 //		whenOrElseGetAndOrElseOverlapThenCorrect();
 //		whenOrElseGetAndOrElseDifferThenCorrect();
@@ -25,7 +25,7 @@ public class OptionalDemo {
 //		givenOptionalWithNullWhenGetThrowsExceptionThenCorrect();
 //		whenOptionalFilterWorksThenCorrect();
 //		givenOptionalWhenMapWorksThenCorrect();
-//		 givenNonNullWhenCreatesNullableThenCorrect();
+//		givenNonNullWhenCreatesNullableThenCorrect();
 	}
 
 	public static void whenCreatesEmptyOptionalThenCorrect() {
@@ -54,11 +54,11 @@ public class OptionalDemo {
 	public static void givenNonNullWhenCreatesNullableThenCorrect() {
 		String name = "some other value";
 		Optional<String> opt = Optional.ofNullable(name);
-		System.out.println("Optional[baeldung] " + opt.toString());
+		System.out.println("Optional[test] " + opt.toString());
 
 		// NPE
-//		 name = null;
-//		 Optional.of(name);
+		 name = null;
+		 Optional.of(name);
 	}
 
 	public static void givenOptionalWhenIsPresentWorksThenCorrect() {

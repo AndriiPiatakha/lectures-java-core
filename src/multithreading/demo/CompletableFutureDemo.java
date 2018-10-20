@@ -84,7 +84,7 @@ public class CompletableFutureDemo {
 //		System.out.println(void1);
 		//=====================
 		
-//		 Run a task specified by a Supplier object asynchronously
+////		 Run a task specified by a Supplier object asynchronously
 //		CompletableFuture<String> future2 = CompletableFuture.supplyAsync(new Supplier<String>() {
 //		    @Override
 //		    public String get() {
@@ -95,6 +95,11 @@ public class CompletableFutureDemo {
 //		        }
 //		        return "Result of the asynchronous computation" + Thread.currentThread().getName();
 //		    }
+//		});
+//		
+//		CompletableFuture.supplyAsync(() -> {
+//			// some actions
+//			return 1;
 //		});
 //
 //		// Block and get the result of the Future
@@ -122,8 +127,8 @@ public class CompletableFutureDemo {
 //		}, executor);
 		
 		
-		// You can attach a callback to the CompletableFuture using 
-		// thenApply(), thenAccept() and thenRun() methods
+//		 You can attach a callback to the CompletableFuture using 
+//		 thenApply(), thenAccept() and thenRun() methods
 		
 		// Create a CompletableFuture
 //		CompletableFuture<String> whatsYourNameFuture = CompletableFuture.supplyAsync(() -> {
@@ -167,7 +172,7 @@ public class CompletableFutureDemo {
 //			System.out.println("Got product detail from remote service " + result2);
 //		});
 
-//		// thenRun() example
+		// thenRun() example
 //		CompletableFuture.supplyAsync(() -> {
 //			return "";
 //		    // Run some computation
@@ -189,7 +194,7 @@ public class CompletableFutureDemo {
 		
 		// If an error occurs in the original supplyAsync() task, then none of the thenApply() callbacks will be called and future will be resolved with the exception occurred. If an error occurs in first thenApply() callback then 2nd and 3rd callbacks won’t be called and the future will be resolved with the exception occurred, and so on.
 		// Handle exceptions using exceptionally() callback
-		int age = -1;
+//		int age = -1;
 //		CompletableFuture<String> maturityFuture = CompletableFuture.supplyAsync(() -> {
 //		    if(age < 0) {
 //		        throw new IllegalArgumentException("Age can not be negative");

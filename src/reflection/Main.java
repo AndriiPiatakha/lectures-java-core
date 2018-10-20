@@ -20,7 +20,7 @@ public class Main {
 	}
 	
 	private void testMethod(String[] str) {
-		System.out.println(str);
+		System.out.println(str[0]);
 	}
 	
 	private void testMethod(String str, Integer i) {

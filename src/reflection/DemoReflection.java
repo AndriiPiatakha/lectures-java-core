@@ -40,8 +40,8 @@ public final class DemoReflection implements A3 {
 		
 		Main main = new Main();
 		Class<? extends Main> classMain = main.getClass();
-		Method[] declaredMethods = classMain.getDeclaredMethods();
-		Arrays.stream(declaredMethods).forEach(System.out::println);
+//		Method[] declaredMethods = classMain.getDeclaredMethods();
+//		Arrays.stream(declaredMethods).forEach(System.out::println);
 		
 //		Class.forName("com.jdbc.driver.DriverManager");
 		
@@ -49,23 +49,24 @@ public final class DemoReflection implements A3 {
 //		testMethod.setAccessible(true);
 //		testMethod.invoke(main, "some string");	
 		
-//		Method testMethod = classMain.getDeclaredMethod("testMethod", String[].class);
-//		testMethod.setAccessible(true);
-//		
-//		String[] arr = {"some string"};
-//		testMethod.invoke(main, new Object[]{arr});	
-//		
-		dr.str = "Before";
-		System.out.println(dr.str);
-		DemoReflection drBefore = dr;
+		Method testMethod = classMain.getDeclaredMethod("testMethod", String[].class);
+		testMethod.setAccessible(true);
 		
-		Field field = clazz.getDeclaredField("str");
+		String[] arr = {"some string"};
+//		testMethod.invoke(main, arr);
+		testMethod.invoke(main, new Object[]{arr});	
+//		
+//		dr.str = "Before";
+//		System.out.println(dr.str);
+//		DemoReflection drBefore = dr;
+		
+//		Field field = clazz.getDeclaredField("str");
 //		field.setAccessible(true); // because in this class
-		field.set(dr, "After");
-		
-		DemoReflection drAfter = dr;
-		System.out.println(dr.str);
-		System.out.println(drBefore.hashCode() == drAfter.hashCode());
+//		field.set(dr, "After");
+//		
+//		DemoReflection drAfter = dr;
+//		System.out.println(dr.str);
+//		System.out.println(drBefore.hashCode() == drAfter.hashCode());
 		
 	}
 
