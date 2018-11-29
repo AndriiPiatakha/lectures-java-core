@@ -243,8 +243,8 @@ public class MyListImpl implements MyList, ListIterable {
 	
 	/**
 	 * Overrides toString method so result would be in the format 
-	 * {[результат вызова toString для элемента 1], 
-	 * [результат вызова toString для элемента 2], ... }
+	 * {[пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ toString пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 1], 
+	 * [пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ toString пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 2], ... }
 	 * 
 	 * @return formatted String.
 	 */

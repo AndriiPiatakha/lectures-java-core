@@ -25,7 +25,7 @@ public class GenericDemo {
 		
 		
 		for (Child child2 : list) {
-			
+//			child2.m1();
 		}
 		String[] arr =  {"as", "s"};
 		String[] array = Arrays.stream(arr).filter((str) -> str.length() < 1).toArray(String[]::new);
@@ -35,7 +35,7 @@ public class GenericDemo {
 	
 	
 	// It could be List<Child> here so I can't add Parent to it
-	public static void someMethod(List<? extends Parent> list) {
+	public static <T> void someMethod(List<? extends Parent> list, T... t) {
 		Parent parent = list.get(0);
 //		list.add(new Parent());
 //		list.add(new Child());

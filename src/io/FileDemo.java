@@ -51,6 +51,7 @@ public class FileDemo {
 				if (file.isDirectory()) {
 					//call this method one more time    testMethod(file)
 				}
+				// increase counter
 			}
 			System.out.println(listFiles);
 		}

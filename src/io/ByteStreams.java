@@ -39,12 +39,12 @@ public class ByteStreams {
 //		
 //		printFileWithBuffer(filePath);
 //		
-//		writeFileToPath("testWrite.txt", "some text to write \nand more text Ñ€ÑƒÑ�Ñ�ÐºÐ¸Ðµ Ð±ÑƒÐºÐ²Ñ‹");
+//		writeFileToPath("testWrite.txt", "some text to write \nand more text ФСЫФС ФЫСФЫ сыы ФЫСЫ");
 //		writeFileToPathFileWriter("testWrite2.txt", "some text to write \nand more text");
 //		noWriteWithoutFlush("testWrite3.txt", "some text to write \nand more text");
 		
 		printFileToConsole(filePath);
-		
+//		doSmth(1);
 	}
 
 	private static void printFileWithFileInputStream(String path) throws IOException, FileNotFoundException {
@@ -115,6 +115,14 @@ public class ByteStreams {
 		
 //		List<String> readAllLines = Files.readAllLines(Paths.get(path));
 	}
+	
+//	public static void doSmth(int i, String... strings) {
+//		if (strings.length == 0) {
+//			strings = new String[1];
+//			strings[0] = "========";
+//		}
+//		System.out.println(strings[0]);
+//	}
 	
 	
 }

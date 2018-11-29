@@ -26,9 +26,9 @@ public final class TestLesson {
 	
 	public static void main(String[] args) throws IOException  {
 		Path p = Paths.get("folder1", "folder2", "text.txt");
-		Charset forName = Charset.forName("UTF-8");
+		Charset charset = Charset.forName("UTF-8");
 		List<String> lines = new ArrayList<>();
-		Files.write(p, lines, forName);
+		Files.write(p, lines, charset);
 
 	}
 	

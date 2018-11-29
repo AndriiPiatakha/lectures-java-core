@@ -29,6 +29,8 @@ public class SerialDemo {
 		System.out.println(readObject == a);
 		System.out.println(readObject.getB() == a.getB());
 		
+		System.out.println(readObject.i == a.i);
+		
 //		ArrayList<B> bList = new ArrayList<>();
 //		ArrayList<A> aList = new ArrayList<>(bList);
 //		if (b instanceof A) {
@@ -49,7 +51,7 @@ public class SerialDemo {
 class A implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private int i;
+	public static Integer i;
 	private transient String str;
 	private B b;
 	
@@ -72,7 +74,32 @@ class A implements Serializable {
 		return "A [i=" + i + ", str=" + str + ", b=" + b + "]";
 	}
 
-	
+	private void writeObject(ObjectOutputStream oos) throws Exception 
+    { 
+        // to perform default serialization of Account object. 
+        oos.defaultWriteObject(); 
+        System.out.println("=============== in write object");
+        // epwd (encrypted password) 
+//        String epwd = "123" + pwd; 
+  
+        // writing encrypted password to the file 
+//        oos.writeObject(epwd); 
+    } 
+  
+    // this method is executed by jvm when readObject() on 
+    // Account object reference in main method is executed by jvm. 
+    private void readObject(ObjectInputStream ois) throws Exception 
+    { 
+        // performing default deserialization of Account object 
+        ois.defaultReadObject(); 
+        System.out.println("============ in read object");
+        // deserializing the encrypted password from the file 
+//        String epwd = (String)ois.readObject(); 
+  
+        // decrypting it and saving it to the original password 
+        // string starting from 3rd  index till the last index 
+//        pwd = epwd.substring(3); 
+    } 
 	
 }
 
@@ -89,4 +116,6 @@ class B implements Serializable {
 	public String toString() {
 		return "B [bString=" + bString + ", bInt=" + bInt + "]";
 	}
+	
+	
 }
