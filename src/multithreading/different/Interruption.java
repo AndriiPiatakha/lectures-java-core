@@ -1,6 +1,8 @@
 package multithreading.different;
 
-public class Interraption implements Runnable {
+import java.util.concurrent.TimeUnit;
+
+public class Interruption implements Runnable {
 	   public void run() {
 	      try {
 	         System.out.println("in run() - about to work2()");
@@ -41,13 +43,14 @@ public class Interraption implements Runnable {
 	      }
 	   }
 	   public static void main(String[] args) {
-	      Interraption si = new Interraption();
+	      Interruption si = new Interruption();
 	      Thread t = new Thread(si);
 	      t.start();
 	      
 
 	      try {
 	         Thread.sleep(2000);
+//	         TimeUnit.MILLISECONDS.sleep(1000);
 	      } catch (InterruptedException x) { }
 			
 	      System.out.println("in main() - interrupting other thread");

@@ -34,7 +34,7 @@ public class CallableDemo {
 		};
 		
 		// ===========================
-		
+//		
 //		ExecutorService executorService = Executors.newSingleThreadExecutor();
 //
 //        Callable<String> callable3 = () -> {
@@ -45,7 +45,7 @@ public class CallableDemo {
 //        };
 //
 //        System.out.println("Submitting Callable");
-//        Future<String> future = executorService.submit(callable);
+//        Future<String> future = executorService.submit(callable3);
 //
 //        // This line executes immediately
 //        System.out.println("Do something else while callable is getting executed");
@@ -98,11 +98,11 @@ public class CallableDemo {
 //                future5.cancel(true);
 //            }
 //        }
-//
-////        System.out.println("Task completed! Retrieving the result");
-////        String result3 = future5.get();
-////        System.out.println(result3);
-//
+
+//        System.out.println("Task completed! Retrieving the result");
+//        String result3 = future5.get();
+//        System.out.println(result3);
+
 //        executorService3.shutdown();
 //
 //        if(!future5.isCancelled()) {
@@ -137,7 +137,10 @@ public class CallableDemo {
 //        List<Callable<String>> taskList = Arrays.asList(task1, task2, task3);
 //
 //        List<Future<String>> futures = executorService6.invokeAll(taskList);
-//
+        
+//        String s = executorService6.invokeAny(taskList);
+//        System.out.println(s);
+
 //        for(Future<String> future2 : futures) {
 //            // The result is printed only after all the futures are complete. (i.e. after 5 seconds)
 //            System.out.println(future2.get());
