@@ -7,7 +7,7 @@ public class BadReport {
 
 	Type type;
 
-	String generate() {
+	String generate(Type type) {
 		switch (type) {
 		case ORDERS_PER_DAY:
 			// do stuff

@@ -1,4 +1,4 @@
-package lessons;
+package lessons.allgroups;
 
 import java.lang.ref.SoftReference;
 import java.lang.ref.WeakReference;

@@ -1,4 +1,4 @@
-package lessons;
+package lessons.group2;
 
 import java.io.File;
 import java.io.FileNotFoundException;

@@ -1,4 +1,4 @@
-package lessons;
+package lessons.allgroups;
 
 public class Lesson9 {
 	private int i;

@@ -1,4 +1,4 @@
-package lessons;
+package lessons.allgroups;
 
 import java.io.File;
 import java.io.IOException;

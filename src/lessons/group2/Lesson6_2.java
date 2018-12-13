@@ -1,11 +1,11 @@
-package lessons;
+package lessons.group2;
 
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.function.Predicate;
 
-import lessons.Shape.Center;
-import lessons.Shape.Nested;
+import lessons.group2.Shape.Center;
+import lessons.group2.Shape.Nested;
 
 public class Lesson6_2 {
 	

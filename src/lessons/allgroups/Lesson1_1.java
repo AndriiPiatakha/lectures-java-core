@@ -1,4 +1,4 @@
-package lessons;
+package lessons.allgroups;
 
 import java.math.BigDecimal;
 import java.util.Arrays;

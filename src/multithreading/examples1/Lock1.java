@@ -7,46 +7,45 @@ import java.util.stream.IntStream;
 
 public class Lock1 {
 
-    private static final int NUM_INCREMENTS = 10000;
+	private static final int NUM_INCREMENTS = 10000;
 
-    private static ReentrantLock lock = new ReentrantLock();
+	private static ReentrantLock lock = new ReentrantLock();
 
-    private static int count = 0;
+	private static int count = 0;
 
-    private static void increment() {
-        lock.lock();
-        try {
-            count++;
-        } finally {
-            lock.unlock();
-        }
-    }
-
-    private synchronized static void incrementSynch2() {
-            count++;
-    }
-    
-    private static void incrementSynch() {
-    	synchronized (Lock1.class) {
-    		count++;
+	private static void increment() {
+		lock.lock();
+		try {
+			count++;
+		} finally {
+			lock.unlock();
 		}
-  }
+	}
 
-    public static void main(String[] args) {
-        testLock();
-    }
+	private synchronized static void incrementSynch2() {
+		count++;
+	}
 
-    private static void testLock() {
-        count = 0;
+	private static void incrementSynch() {
+		synchronized (Lock1.class) {
+			count++;
+		}
+	}
 
-        ExecutorService executor = Executors.newFixedThreadPool(2);
+	public static void main(String[] args) {
+		testLock();
+	}
 
-        IntStream.range(0, NUM_INCREMENTS)
-                 .forEach(i -> executor.submit(Lock1::increment));
+	private static void testLock() {
+		count = 0;
 
-        ConcurrentUtils.stop(executor);
+		ExecutorService executor = Executors.newFixedThreadPool(2);
 
-        System.out.println(count);
-    }
+		IntStream.range(0, NUM_INCREMENTS).forEach(i -> executor.submit(Lock1::increment));
+
+		ConcurrentUtils.stop(executor);
+
+		System.out.println(count);
+	}
 
 }

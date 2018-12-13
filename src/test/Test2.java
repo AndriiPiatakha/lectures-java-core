@@ -1,6 +1,6 @@
 package test;
 
-import lessons.Lesson6_2;
+import lessons.group2.Lesson6_2;
 
 public class Test2 {
 
