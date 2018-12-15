@@ -12,6 +12,7 @@ public class BankTest {
 	@Before
 	public void setUp() {
 		testInstance = new Bank();
+		System.out.println("asd");
 	}
 	
 	@Test

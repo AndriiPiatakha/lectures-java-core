@@ -108,7 +108,7 @@ public class CompletableFutureDemo {
 
 //=================================================
 		
-		// Variations of runAsync() and supplyAsync() methods
+//		// Variations of runAsync() and supplyAsync() methods
 //		static CompletableFuture<Void>  runAsync(Runnable runnable)
 //		static CompletableFuture<Void>  runAsync(Runnable runnable, Executor executor)
 //		static <U> CompletableFuture<U> supplyAsync(Supplier<U> supplier)
