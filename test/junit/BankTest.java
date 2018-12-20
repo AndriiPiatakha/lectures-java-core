@@ -29,5 +29,10 @@ public class BankTest {
 	public void test() {
 		System.out.println(testInstance.hashCode());
 	}
+	
+	@Test(expected = Throwable.class)
+	public void test3() throws Throwable {
+		throw new RuntimeException();
+	}
 
 }
