@@ -7,6 +7,7 @@ public class BuilderExample {
 
 		director.setComputerBuilder(cheapComputerBuilder);
 		director.constructComputer();
+//		director.getResult();
 		
 // ==================================
 		

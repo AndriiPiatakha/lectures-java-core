@@ -5,6 +5,6 @@ package patterns.creationalpatterns.abstractfactory.windowfactory;
 public interface AbstractWidgetFactory {
 
 	public Window createWindow();
-	
+//	public Scroll createScroll();
 	// create buttons, scroll bar etc
 }
