@@ -28,15 +28,15 @@ public class Part3 implements Runnable {
 	@Override
 	public void run() {
 		try {
-			synchronized (this) {
+//			synchronized (this) {
 				while (true) {
 					System.out.println(counter1 + " == " + counter2);
 					counter1++;
-					TimeUnit.MILLISECONDS.sleep(100);
+					TimeUnit.MILLISECONDS.sleep(10);
 					counter2++;
-					TimeUnit.MILLISECONDS.sleep(100);
+					TimeUnit.MILLISECONDS.sleep(10);
 				}
-			}
+//			}
 		} catch (InterruptedException e) {
 			System.out.println("Thread was interrupted");
 		}

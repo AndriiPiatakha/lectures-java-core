@@ -34,7 +34,7 @@ public class CallableDemo {
 		};
 		
 		// ===========================
-//		
+		
 //		ExecutorService executorService = Executors.newSingleThreadExecutor();
 //
 //        Callable<String> callable3 = () -> {
@@ -137,10 +137,10 @@ public class CallableDemo {
 //        List<Callable<String>> taskList = Arrays.asList(task1, task2, task3);
 //
 //        List<Future<String>> futures = executorService6.invokeAll(taskList);
-        
+//        
 //        String s = executorService6.invokeAny(taskList);
 //        System.out.println(s);
-
+//
 //        for(Future<String> future2 : futures) {
 //            // The result is printed only after all the futures are complete. (i.e. after 5 seconds)
 //            System.out.println(future2.get());

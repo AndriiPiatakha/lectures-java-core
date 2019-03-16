@@ -33,5 +33,10 @@ public class Synchronized2 {
             count = count + 1;
         }
     }
+    
+//    private static synchronized void incrementSync() {
+//        count = count + 1;
+//    }
+
 
 }

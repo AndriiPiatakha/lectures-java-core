@@ -160,7 +160,7 @@ public class CompletableFutureDemo {
 //		}).thenApply(greeting -> {
 //		    return greeting + ", Welcome yeah )";
 //		});
-//
+
 //		System.out.println(welcomeText.get());
 //		
 //
@@ -228,7 +228,7 @@ public class CompletableFutureDemo {
 //		    }
 //		    return res;
 //		});
-//
+
 //		System.out.println("Maturity : " + maturityFuture.get());
 //
 //
