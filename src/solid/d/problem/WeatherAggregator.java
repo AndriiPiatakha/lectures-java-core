@@ -5,7 +5,9 @@ public class WeatherAggregator {
     private WeatherApi2 weatherApi2 = new WeatherApi2();
  
     public double getTemperature() {
-        return (weatherApi1.getTemperatureCelcius() + toCelcius(weatherApi2.getTemperatureFahrenheit())) / 2;
+        return (weatherApi1.getTemperatureCelcius() 
+        		+ toCelcius(
+        				weatherApi2.getTemperatureFahrenheit())) / 2;
     }
  
     private double toCelcius(double temperatureFahrenheit) {

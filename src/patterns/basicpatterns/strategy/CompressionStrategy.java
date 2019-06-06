@@ -6,7 +6,16 @@ import java.util.List;
 
 //Strategy Interface
 
+@FunctionalInterface
 public interface CompressionStrategy {
 
 	public void compressFiles(List<File> files);
+	
+	default void doSmth(){
+		
+	};
+	
+	static void doSmth2(){
+		
+	};
 }

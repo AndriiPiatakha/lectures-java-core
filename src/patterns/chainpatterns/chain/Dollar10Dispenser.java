@@ -11,7 +11,6 @@ public class Dollar10Dispenser implements DispenseChain {
 
 	@Override
 	public void dispense(Currency cur) {
-		System.out.println("Next chain = " + this.chain);
 		if (cur.getAmount() >= 10) {
 			int num = cur.getAmount() / 10;
 			int remainder = cur.getAmount() % 10;
@@ -19,9 +18,7 @@ public class Dollar10Dispenser implements DispenseChain {
 			if (remainder != 0) {
 				this.chain.dispense(new Currency(remainder));
 			}
-			System.out.println("Exit from last dispenser");	
 		} else {
-			System.out.println("Why no NPE? 2");
 			this.chain.dispense(cur);
 		}
 	}

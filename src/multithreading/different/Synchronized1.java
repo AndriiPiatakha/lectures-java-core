@@ -12,7 +12,7 @@ public class Synchronized1 {
 
     public static void main(String[] args) {
         testSyncIncrement();
-        testNonSyncIncrement();
+//        testNonSyncIncrement();
     }
 
     private static void testSyncIncrement() {
