@@ -32,7 +32,7 @@ public class BusinessLogic {
         // No Code Written yet
     }
     
-    @Todo(priority = Todo.Priority.MEDIUM, author = "Uday", status = Todo.Status.STARTED)
+    @Todo(priority = Todo.Priority.MEDIUM, author = "Some other", status = Todo.Status.STARTED)
     public void incompleteMethod1() {
         //Some business logic is written
         //But its not complete yet

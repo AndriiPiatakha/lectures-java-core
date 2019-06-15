@@ -16,6 +16,16 @@ public class CallableDemo {
 
 		System.out.println(future.get());
 		
+		es.shutdown();
+		
+//		es.shutdownNow();
+		while (true) {
+			
+			if (es.isTerminated()) {
+				break;
+			}
+		}
+		System.out.println();
 		
 	}
 	
