@@ -17,7 +17,6 @@ import java.util.Objects;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
-import sun.awt.datatransfer.DataTransferer;
 
 public class Lesson12_2 {
 	

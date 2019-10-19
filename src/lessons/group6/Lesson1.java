@@ -82,8 +82,5 @@ interface SomeI extends SomeI2 {
 	static void doSmth2() {
 		System.out.println("In SomeI");
 	}
-	
-	default void какойтоМетод() {
-		
-	}
+
 }

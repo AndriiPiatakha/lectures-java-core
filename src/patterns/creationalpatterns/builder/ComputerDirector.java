@@ -16,6 +16,6 @@ public class ComputerDirector {
 		computerBuilder.buildSystemBlock();
 		computerBuilder.buildDisplay();
 		computerBuilder.buildManipulators();
-		return new Computer();
+		return computerBuilder.getComputer();
 	}
 }

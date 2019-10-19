@@ -6,8 +6,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
 
-import com.sun.org.apache.bcel.internal.classfile.Field;
-
 public class Lesson8_2 {
 
 	public static void main(String[] args) throws CloneNotSupportedException {

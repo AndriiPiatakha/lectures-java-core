@@ -6,12 +6,12 @@ public class BuilderExample {
 		final ComputerBuilder cheapComputerBuilder = new CheapComputerBuilder();
 
 		director.setComputerBuilder(cheapComputerBuilder);
-		director.constructComputer();
+		Computer computer = director.constructComputer();
 //		director.getResult();
 		
 // ==================================
 		
-		final Computer computer = director.getComputer();
-		System.out.println(computer);
+		final Computer computer2 = director.getComputer();
+		System.out.println(computer2);
 	}
 }

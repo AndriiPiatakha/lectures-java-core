@@ -15,8 +15,6 @@ import java.util.List;
 import java.util.TreeSet;
 import java.util.function.Function;
 
-import javafx.scene.Parent;
-
 public class TestDemo extends Parent implements I, A{
 	
 	private int a;
@@ -123,6 +121,10 @@ public class TestDemo extends Parent implements I, A{
 	public static void test2(D<? extends ChildA> s) {
 		
 	}
+}
+
+class Parent {
+	
 }
 
 interface I {
