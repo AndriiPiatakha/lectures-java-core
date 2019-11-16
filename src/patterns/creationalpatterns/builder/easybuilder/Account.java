@@ -26,6 +26,7 @@ public class Account {
    		return "Account [userId=" + userId + ", token=" + token + "]";
    	}
     
+    // TODO to fix public class
     public class Builder {
 
         private Builder() {
