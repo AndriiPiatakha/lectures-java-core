@@ -48,7 +48,7 @@ public class FileDemo {
 			File[] listFiles = file.listFiles();
 			
 			for (File file2 : listFiles) {
-				if (file.isDirectory()) {
+				if (file2.isDirectory()) {
 					//call this method one more time    testMethod(file)
 				}
 				// increase counter

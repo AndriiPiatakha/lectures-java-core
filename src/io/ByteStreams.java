@@ -22,7 +22,7 @@ public class ByteStreams {
 	
 	public static void main(String[] args) throws IOException {
 		String filePath = "demoIo.txt";
-//		printFileWithFileInputStream(filePath);
+		printFileWithFileInputStream(filePath);
 		
 //		System.out.println();
 //		System.out.println("===========");
@@ -43,7 +43,7 @@ public class ByteStreams {
 //		writeFileToPathFileWriter("testWrite2.txt", "some text to write \nand more text");
 //		noWriteWithoutFlush("testWrite3.txt", "some text to write \nand more text");
 		
-		printFileToConsole(filePath);
+//		printFileToConsole(filePath);
 //		doSmth(1);
 	}
 
@@ -54,6 +54,7 @@ public class ByteStreams {
 				System.out.print((char)i);
 			}
 		}
+		
 	}
 	
 	private static void printFileWithFileInputStreamWithBuffer(String path) throws IOException, FileNotFoundException {
