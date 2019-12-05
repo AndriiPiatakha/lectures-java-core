@@ -19,7 +19,9 @@ public class GenericDemo {
 	
 		List<Child> list = new ArrayList<>();
 		
-		
+//		for (Child child : list) {
+//			child.specificChildMethod();
+//		}
 		// can call only if generic
 		someMethod(list);
 		
@@ -48,7 +50,7 @@ public class GenericDemo {
 //		list.add(new Parent());
 //		list.add(new Child());
 //		list.add(new Object());
-//		list.add(null);
+		list.add(null);
 		// call specific parent method;
 	
 //		list.add(new Object());
