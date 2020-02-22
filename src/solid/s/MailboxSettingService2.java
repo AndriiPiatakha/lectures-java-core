@@ -1,6 +1,6 @@
 package solid.s;
 
-public class EmailSettingService2 {
+public class MailboxSettingService2 {
 	
 	private SecurityService ss = new SecurityService();
 	

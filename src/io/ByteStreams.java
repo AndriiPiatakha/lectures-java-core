@@ -48,7 +48,7 @@ public class ByteStreams {
 	}
 
 	private static void printFileWithFileInputStream(String path) throws IOException, FileNotFoundException {
-		try (FileInputStream fis = new FileInputStream(path)) {
+		try (var fis = new FileInputStream(path)) {
 			int i;
 			while ((i = fis.read()) != -1) {
 				System.out.print((char)i);
@@ -58,9 +58,9 @@ public class ByteStreams {
 	}
 	
 	private static void printFileWithFileInputStreamWithBuffer(String path) throws IOException, FileNotFoundException {
-		try (FileInputStream fis = new FileInputStream(path);
-				BufferedInputStream bis = new BufferedInputStream(fis);
-				DataInputStream dis = new DataInputStream(bis);
+		try (var fis = new FileInputStream(path);
+				var bis = new BufferedInputStream(fis);
+				var dis = new DataInputStream(bis);
 //				DataInputStream dis2 = new DataInputStream(new BufferedInputStream(new FileInputStream(path)))	
 				) {
 			int i;
@@ -82,7 +82,7 @@ public class ByteStreams {
 	}
 	
 	private static void printFileWithBuffer(String path) throws FileNotFoundException, IOException {
-		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+		try (var br = new BufferedReader(new FileReader(path))) {
 			String line;
 			while ( (line = br.readLine()) != null) {
 				System.out.println(line);
@@ -112,6 +112,7 @@ public class ByteStreams {
 	public static void printFileToConsole(String path) throws IOException {
 		try (Stream<String> fStream = Files.lines(Paths.get(path), StandardCharsets.UTF_8)) {
 			fStream.forEach(System.out::println);
+//			fStream.forEach((s) -> System.out.println(s));
 		}
 		
 //		List<String> readAllLines = Files.readAllLines(Paths.get(path));

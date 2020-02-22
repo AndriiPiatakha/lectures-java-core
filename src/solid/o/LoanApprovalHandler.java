@@ -1,12 +1,22 @@
 package solid.o;
 
 public class LoanApprovalHandler {
-//	public void approveLoan(PersonalValidator validator) {
-//		if (validator.isValid()) {
-//			// Process the loan.
-//		}
-//	}
+	public void approveLoan(PersonalValidator validator) {
+		if (validator.isValid()) {
+			// Process the loan.
+		}
+	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public void approvePersonalLoan(PersonalLoanValidator validator) {
 		if (validator.isValid()) {
 			// Process the loan.
