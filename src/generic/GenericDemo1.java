@@ -1,5 +1,7 @@
 package generic;
 
+import java.util.Formatter;
+
 public class GenericDemo1 {
 
 	// generic method printArray

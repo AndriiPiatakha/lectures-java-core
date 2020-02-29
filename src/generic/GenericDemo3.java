@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class GenericDemo3<T> {
 	
@@ -23,7 +24,7 @@ public class GenericDemo3<T> {
 		GenericDemo3<Integer> integerBox = new GenericDemo3<>();
 		GenericDemo3<String> stringBox = new GenericDemo3<>();
 
-		integerBox.add(new Integer(10));
+		integerBox.add(10);
 		stringBox.add("Hello World");
 		
 		Integer integer = integerBox.get();
@@ -43,6 +44,11 @@ public class GenericDemo3<T> {
 		Integer integer2 = coll.get(0);
 		System.out.println(integer2);
 		
-		Function<String, Integer> function = (s -> 1);
+		Function<String, Integer> function = (s -> s.length());
+		
+		List<String> strings = new ArrayList<>();
+		List<Integer> ints = strings.stream()
+				.map(function)
+				.collect(Collectors.toList());
 	}
 }
