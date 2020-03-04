@@ -70,7 +70,7 @@ class FinderTask implements Callable<Integer> {
 	}
 
 	@Override
-	public Integer call() throws Exception {
+	public Integer call() {
 		// TODO 1 ms delay on each comparison
 		return Arrays.stream(row).max().getAsInt();
 	}
