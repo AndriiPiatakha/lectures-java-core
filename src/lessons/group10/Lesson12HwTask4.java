@@ -71,7 +71,17 @@ class FinderTask implements Callable<Integer> {
 
 	@Override
 	public Integer call() {
-		// TODO 1 ms delay on each comparison
+		
+//		int max = row[0];
+//		for (int i : row) {
+//			try {
+//				Thread.sleep(1);
+//			} catch (InterruptedException e) {}
+//			if (i > max) {
+//				max = i;
+//			}
+//		}
+		
 		return Arrays.stream(row).max().getAsInt();
 	}
 }
