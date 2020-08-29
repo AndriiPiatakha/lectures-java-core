@@ -7,15 +7,7 @@ public class LoanApprovalHandler {
 		}
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	public void approvePersonalLoan(PersonalLoanValidator validator) {
 		if (validator.isValid()) {
