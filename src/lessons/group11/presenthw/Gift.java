@@ -27,11 +27,14 @@ public class Gift {
 	public double calculateWeight() {
 //		double sumWeight = 0;
 //		for (Sweet sweet : sweets) {
-//			sumWeight += sweet.getWeight();
+//			if (sweet != null) {
+//				sumWeight += sweet.getWeight();
+//			}
 //		}
 //		return sumWeight;
 		
 		return Arrays.stream(sweets)
+					.filter(Objects::nonNull)
 					.mapToDouble(sweet -> sweet.getWeight())
 					.sum();
 	}
@@ -48,6 +51,18 @@ public class Gift {
 						}
 					})
 					.toArray(Sweet[]::new);
+	}
+	
+	public double calculateDoughWeight() {
+		return Arrays.stream(sweets)
+					.mapToDouble(sweet -> {
+						if (sweet instanceof Cookie) {
+							return ((Cookie)sweet).getDoughWeight();
+						} else {
+							return 0;
+						}
+					})
+					.sum();
 	}
 
 }

@@ -14,4 +14,4 @@ class FlightBird extends Bird2 {
 }
 
 	
-class NonFlight extends Bird2{}
+class NonFlight extends Bird2 {}
