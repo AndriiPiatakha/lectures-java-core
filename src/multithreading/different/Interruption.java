@@ -24,6 +24,7 @@ public class Interruption implements Runnable {
 	         if (Thread.currentThread().isInterrupted()) {
 	            System.out.println("C isInterrupted()="+ Thread.currentThread().isInterrupted());
 	            Thread.sleep(2000);
+	            TimeUnit.SECONDS.sleep(1);
 	            System.out.println("D isInterrupted()="+ Thread.currentThread().isInterrupted());
 	         }
 	      }

@@ -67,6 +67,8 @@ public class FileDemo {
 		File[] listFiles = file.listFiles(pathname -> pathname.getName().endsWith(".java"));
 		
 		Path path = Paths.get("test", "test2");
+		Files.createDirectories(path);
+		
 		String.join(",", new String[]{""});
 		
 		String[] array = new String[] { "a", "b", "c" };
