@@ -12,7 +12,7 @@ public class Synchronized1 {
 
     public static void main(String[] args) {
         testSyncIncrement();
-//        testNonSyncIncrement();
+        testNonSyncIncrement();
     }
 
     private static void testSyncIncrement() {
@@ -41,15 +41,15 @@ public class Synchronized1 {
         System.out.println("NonSync: " + count);
     }
 
-    private static synchronized void incrementSync() {
-    		count = count + 1;
-    }
-    
-//    private static void incrementSync() {
-//    	synchronized (Synchronized1.class) {
+//    private static synchronized void incrementSync() {
 //    		count = count + 1;
-//		}
 //    }
+    
+    private static void incrementSync() {
+    	synchronized (Synchronized1.class) {
+    		count = count + 1;
+		}
+    }
 
     private static void increment() {
         count = count + 1;
