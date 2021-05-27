@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 //import java.util.HashSet;
 //import java.util.Set;
 //
@@ -28,3 +30,31 @@
 //		System.out.println(a.i);
 //	}
 //}
+
+
+public class MyClass {
+	
+	
+	public static void main(String[] args) {
+		System.out.println(m());
+	}
+	
+	public static int m() {
+		try {
+			return 1;
+		} finally {
+			return 2;
+		}
+	}
+	
+	public static int t2() {
+		try {
+			int x = 0;
+			int y = 5 / 2; 
+		} catch (Exception e) {
+			
+		} 
+		
+		return 0;
+	}
+}

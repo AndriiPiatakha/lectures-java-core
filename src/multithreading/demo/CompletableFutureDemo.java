@@ -57,10 +57,10 @@ public class CompletableFutureDemo {
 //
 //		System.out.println(complete);
 		// ========================
-//	//	  Running asynchronous computation using runAsync()
-//	//	Thread t = new Thread();
-//	//	t.setDaemon(true);
-//		
+	//	  Running asynchronous computation using runAsync()
+	//	Thread t = new Thread();
+	//	t.setDaemon(true);
+		
 //		System.out.println("Test");
 //		CompletableFuture<Void> future = CompletableFuture.runAsync(new Runnable() {
 //		    @Override

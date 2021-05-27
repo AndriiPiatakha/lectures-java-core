@@ -23,7 +23,7 @@ public class CallableDemo {
 		    }
 		};
 		
-		//Note that with Callable, you don’t need to surround 
+		//Note that with Callable, you don't need to surround 
 		// Thread.sleep() by a try/catch block, because unlike Runnable, 
 		// a Callable can throw a checked exception.
 		
@@ -98,11 +98,11 @@ public class CallableDemo {
 //                future5.cancel(true);
 //            }
 //        }
-
+//
 //        System.out.println("Task completed! Retrieving the result");
 //        String result3 = future5.get();
 //        System.out.println(result3);
-
+//
 //        executorService3.shutdown();
 //
 //        if(!future5.isCancelled()) {
@@ -117,7 +117,7 @@ public class CallableDemo {
         
         // ==========================
         
-//        ExecutorService executorService6 = Executors.newFixedThreadPool(5);
+//        ExecutorService executorService6 = Executors.newFixedThreadPool(3);
 //
 //        Callable<String> task1 = () -> {
 //            Thread.sleep(2000);
